@@ -3,9 +3,9 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Home-CureComet: The Pharma Website</title>
+    <title>CureComet Login</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='login.css'>
     <script src='main.js'></script>
 </head>
 <body>
@@ -23,6 +23,24 @@
             <li><a href="login.php">Login</a></li>
         </ul>
     </header>
-    
+
+    <div class="login_form">
+    <center>
+        <form class="form">
+            <img src="Images/login.png" height="80px" width="80px"><br><br>
+            <select name="login type">
+                <option name="User">User</option>
+                <option name="doctor">Doctor</option>
+                <option name="vendor">Vendor</option>
+                <option name="delivery_person">Delivery Person</option>
+                <option name="counsellor">Counsellor</option>
+            </select></br></br>
+            <input type="text" name="username"><br>
+            <input type="password" name="password"><br>
+            <input type="submit" name="enter">
+
+        </form>
+    </center>    
+    </div>
 </body>
 </html>

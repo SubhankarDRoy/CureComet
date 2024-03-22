@@ -1,0 +1,57 @@
+body{
+    background-color: rgb(207, 252, 229)
+}
+
+
+header{
+    background-color: White;
+    border: 2px;
+    border-radius: 18px;
+    display:grid;
+    padding: 5px;
+}
+
+ul.menu {
+  list-style-type: none;
+  padding: 0px;
+}
+
+.menu li {
+  margin-bottom: 10px;
+  float: left;
+}
+
+.menu li a {
+  display: block;
+  text-decoration: none;
+  color: #333;
+  padding: 10px;
+  background-color: #f4f4f4;
+}
+
+.login_form{
+    display: block;
+    align-items:baseline;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    
+}
+form {
+    align-items: center;
+    padding: 20px;
+}
+
+form input {
+    margin: 10px;
+    border-radius: 5px;
+    padding: 3px;
+    
+}
+
+input[name='enter']{
+    border-radius: 20px;
+    padding: 8px 20px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+}
