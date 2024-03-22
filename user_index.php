@@ -20,6 +20,7 @@
             <li><a href="Cart.php">Cart</a></li>
             <li><a href="orders.php">Orders</a></li>
             <li><a href="account.php">Accounts</a></li>
+            <li><a href="login.php">Accounts</a></li>
         </ul>
     </header>
     
