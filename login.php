@@ -29,11 +29,12 @@
         <form class="form" action="log_process.php" method="POST">
             <img src="Images/login.png" height="80px" width="80px"><br><br>
             <select name="login_type">
-                <option value="user">User</option>
-                <option value="doctor">Doctor</option>
-                <option value="vendor">Vendor</option>
-                <option value="delivery_person">Delivery Person</option>
-                <option value="counsellor">Counsellor</option>
+                <option value="Admin">Admin</option>
+                <option value="User">User</option>
+                <option value="Doctor">Doctor</option>
+                <option value="Vendor">Vendor</option>
+                <option value="DeliveryPerson">Delivery Person</option>
+                <option value="Counsellor">Counsellor</option>
             </select></br></br>
             <input type="text" name="username"><br>
             <input type="password" name="password"><br>
