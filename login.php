@@ -26,19 +26,19 @@
 
     <div class="login_form">
     <center>
-        <form class="form">
+        <form class="form" action="log_process.php" method="POST">
             <img src="Images/login.png" height="80px" width="80px"><br><br>
-            <select name="login type">
-                <option name="User">User</option>
-                <option name="doctor">Doctor</option>
-                <option name="vendor">Vendor</option>
-                <option name="delivery_person">Delivery Person</option>
-                <option name="counsellor">Counsellor</option>
+            <select name="login_type">
+                <option value="user">User</option>
+                <option value="doctor">Doctor</option>
+                <option value="vendor">Vendor</option>
+                <option value="delivery_person">Delivery Person</option>
+                <option value="counsellor">Counsellor</option>
             </select></br></br>
             <input type="text" name="username"><br>
             <input type="password" name="password"><br>
-            <input type="submit" name="enter">
-
+            <input type="submit" name="enter"></br><br>
+            <a href="Create.php">Create New Account</a>
         </form>
     </center>    
     </div>
