@@ -11,17 +11,6 @@ header{
     padding: 5px;
 }
 
-
-ul.menu {
-  list-style-type: none;
-  padding: 0px;
-}
-
-.menu li {
-  margin-bottom: 10px;
-  float: left;
-}
-
 .menu li a {
   display: block;
   text-decoration: none;
@@ -43,6 +32,8 @@ form {
     padding: 20px;
 }
 
+
+
 form input {
     margin: 10px;
     border-radius: 5px;
@@ -50,9 +41,13 @@ form input {
     
 }
 
+
+
+
 input[name='enter']{
     border-radius: 20px;
     padding: 8px 20px;
     font-family: 'Courier New', Courier, monospace;
     font-size: 16px;
 }
+

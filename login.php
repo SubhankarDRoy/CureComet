@@ -30,7 +30,7 @@
             <input type="text" name="username"><br>
             <input type="password" name="password"><br>
             <input type="submit" name="enter" value="Login"></br><br>
-            <a href="Create.php">Create New Account</a>
+            <a href="create.php">Create New Account</a>
         </form>
     </center>    
     </div>
