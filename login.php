@@ -12,16 +12,7 @@
     <header>
         <img class="logo" src="Images/curecomet_HQ.png" width="200px" height="150px" >
 
-        <ul class="menu">
-            <li><a href="user_index.php">Home</a></li>
-            <li><a href="L_Test.php">Lab Tests</a></li>
-            <li><a href="appointment.php">Appointments</a></li>
-            <li><a href="about.php">About</a></li>
-            <li><a href="Cart.php">Cart</a></li>
-            <li><a href="orders.php">Orders</a></li>
-            <li><a href="account.php">Accounts</a></li>
-            <li><a href="login.php">Login</a></li>
-        </ul>
+        
     </header>
 
     <div class="login_form">
@@ -38,7 +29,7 @@
             </select></br></br>
             <input type="text" name="username"><br>
             <input type="password" name="password"><br>
-            <input type="submit" name="enter"></br><br>
+            <input type="submit" name="enter" value="Login"></br><br>
             <a href="Create.php">Create New Account</a>
         </form>
     </center>    
