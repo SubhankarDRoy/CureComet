@@ -27,8 +27,8 @@
                 <option value="DeliveryPerson">Delivery Person</option>
                 <option value="Counsellor">Counsellor</option>
             </select></br></br>
-            <input type="text" name="username"><br>
-            <input type="password" name="password"><br>
+            <input type="text" name="username" placeholder="Username"><br>
+            <input type="password" name="password" placeholder="Password"><br>
             <input type="submit" name="enter" value="Login"></br><br>
             <a href="create.php">Create New Account</a>
         </form>
