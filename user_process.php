@@ -50,13 +50,17 @@
         {
             echo "User already exists";
         }
+		else
+		{
+			$query="insert into users(Name,Username,Password,DoB,PhoneNumber,Email,Address) values('$name','$username','$password','$dob','$phno','$email','$address');";
+
+    		if(mysqli_query($con, $query))
+    		{
+    		    echo "Account Created";
+    		    echo "<br><br> <a href='login.php'>Go to Login Page</a>";
+    		}
+		}
     }
 
-    $query="insert into users(Name,Username,Password,DoB,PhoneNumber,Email,Address) values('$name','$username','$password','$dob','$phno','$email','$address');";
-
-    if(mysqli_query($con, $query))
-    {
-        echo "Account Created";
-        echo "<br><br> <a href='login.php'>Go to Login Page</a>";
-    }
+    
 
