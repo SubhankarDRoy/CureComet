@@ -17,7 +17,7 @@
 
   #header-label {
     color: #000000;
-    margin-left: 1280px; /* Pushes the label to the left */
+    margin-left: 86%; /* Pushes the label to the left */
     font-family: 'Times New Roman', Times, serif;
     font-size: 17px;
   }

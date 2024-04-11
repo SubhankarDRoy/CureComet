@@ -17,7 +17,7 @@
                 <li><a href="L_Test.php">Lab Tests</a></li>
                 <li><a href="appointment.php">Appointments</a></li>
                 <li><a href="about.php">About</a></li>
-                <li><a href="Cart.php">Cart</a></li>
+                <li><a href="cart.php">Cart</a></li>
                 <li><a href="orders.php">Orders</a></li>
                 <li><a href="account.php">Accounts</a></li>
                 <li><a href="login.php">Log Out</a></li>
