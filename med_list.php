@@ -31,35 +31,5 @@
         ?>
     </header>
 
-    <table>
-        <?php
-            require('connection.php');
-            $query="Select * from vendor;";
-            $vendor_list = mysqli_query($con, $query);
-
-            if(!$vendor_list)
-            {
-                die("error");
-            }
-            
-            while ($arr=mysqli_fetch_array($vendor_list,MYSQLI_NUM))
-            {
-                echo "<br>";
-                echo "<table border = '1' ><tr>";
-                    echo "<td>";
-                        echo "<a href='med_list.php?Vendor_ID=$arr[0]'>".$arr[2]."</a>";
-                    echo "</td>";
-                    echo "</tr>";
-
-                    echo "<tr>";
-                    echo "<td>Address:".$arr[5]."</td>";
-                    echo "</tr><tr>";   
-                    echo "<td>Contact:".$arr[3]."</td>";
-                    echo "</tr>";
-                echo "</table>";
-                
-            }
-        ?>
-    
 </body>
 </html>

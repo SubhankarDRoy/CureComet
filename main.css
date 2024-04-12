@@ -43,7 +43,28 @@
     color: #ff8c00; /* Change to desired hover color */
   }
 
- 
+  table {
+    margin: 0 auto; /* Centers the table horizontally */
+  background-color: white; /* Sets background color to white */
+  border-collapse: collapse; /* Collapses the borders into a single border */
+  width: 50%; /* Sets a fixed width for the tables */
+  }
+  
+  table, th, td {
+    border: 0px solid black; /* Adds borders to table, th, and td elements */
+    border-radius: 10px;
+    padding: 8px; /* Adds padding inside table cells */
+  }
+  table a {
+    text-decoration: none; /* Remove underline */
+    font-size: 18px;
+    color: blue;
+  }
+  
+  /* Change link text color on hover */
+  table a:hover {
+    color: red; /* Change to desired color */
+  }
   
   /* Footer Styles */
   footer {
