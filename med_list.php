@@ -31,5 +31,40 @@
         ?>
     </header>
 
+    <?php
+            $vid=$_GET['Vendor_ID'];
+            require('connection.php');
+            $query="Select * from med_list where Vendor_ID='".$vid."';";
+            $vendor_list = mysqli_query($con, $query);
+
+            if(!$vendor_list)
+            {
+                die("error");
+            }
+            
+            while ($arr=mysqli_fetch_array($vendor_list,MYSQLI_NUM))
+            {
+                echo "<br>";
+                echo "<table border = '1' ><tr>";
+                    echo "<td>";
+                        echo "<h3>".$arr[1]."</h3>";
+                    echo "</td>";
+                    
+                    echo "</tr>";
+
+                    echo "<tr>";
+                        echo "<td><b>Composition:</b>".$arr[2]."</td>";
+                    echo "</tr><tr>";  
+                        echo "<td><b>Company:</b>".$arr[3]."</td>";
+                        echo "<td><b>Qty:</b>".$arr[5]."</td>";
+                        echo "<td><b>Price:</b>".$arr[4]."</td>";
+                        echo "<td>";
+                        echo "<button onclick=\"document.location='add_cartProcess.php?Vendor_ID=$vid&medname=$arr[1]'\">+Add</button";
+                        echo "</td>";
+                    echo "</tr>";
+                echo "</table>";
+            }
+        ?>
+
 </body>
 </html>

@@ -52,9 +52,9 @@
                     echo "</tr>";
 
                     echo "<tr>";
-                    echo "<td>Address:".$arr[5]."</td>";
+                    echo "<td><b>Address:</b>".$arr[5]."</td>";
                     echo "</tr><tr>";   
-                    echo "<td>Contact:".$arr[3]."</td>";
+                    echo "<td><b>Contact:</b>".$arr[3]."</td>";
                     echo "</tr>";
                 echo "</table>";
                 
