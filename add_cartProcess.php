@@ -9,14 +9,18 @@
     $med_name=$_GET['medname'];
 
     
-    $query="Select * from cart where Vendor_ID='".$vid."';";
+    $query="Select * from cart where Username='".$user."';";
     
     $cart_list=mysqli_query($con,$query);
-    $arr=mysqli_fetch_array($cart_list,MYSQLI_NUM);
-    echo $arr[1];
-    if($vid!=$arr[1])
+    
+    if(!$cart_list)
     {
-        echo "
+        $arr=mysqli_fetch_array($cart_list,MYSQLI_NUM);
+        echo $arr[1];
+
+        if($vid!=$arr[1])
+        {
+            echo "
             <script type=\"text/javascript\">
             if(confirm(\"Your cart contains medicines from other vendor. do you want to clear it ?\")==true)
             {
@@ -27,7 +31,9 @@
                 window.location.replace(\"med_list.php?Vendor_ID=$vid\");
             }
             </script>
-        ";
+            ";
+        }
+        
     }
     else
     {
