@@ -17,7 +17,7 @@
 
   #header-label {
     color: #000000;
-    margin-left: 86%; /* Pushes the label to the left */
+    margin-left: 85%; /* Pushes the label to the left */
     font-family: 'Times New Roman', Times, serif;
     font-size: 17px;
   }
@@ -83,6 +83,21 @@
   /* Change button color on hover */
   table button:hover {
     background-color: #08330a; /* Change to desired hover color */
+  }
+
+  table button.delete-btn {
+    padding: 10px; /* Adds padding to the button */
+    background-color: #f44336; /* Red background color */
+    color: white; /* Text color */
+    font-size: 13px;
+    border: none; /* Removes button border */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s; /* Smooth transition for background color */
+  }
+  
+  /* Change delete button color on hover */
+  table button.delete-btn:hover {
+    background-color: #9f1515; /* Darker red on hover */
   }
   
   /* Footer Styles */

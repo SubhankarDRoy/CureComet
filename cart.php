@@ -38,11 +38,46 @@
             echo "<label id='header-label'> <b>Welcome</b> ".$name."</label>";
         ?>
     </header>
-    <div class="about us">
-    <img class="logo_about" src="Images/curecomet_HQ.png" width="200px" height="150px" >
-    <p class="about">CureComet is a pharmaceutical website that allows users to purchase medications from local pharmacies that have enrolled with CureComet. Apart from purchasing medicines, the users can also book doctor’s appointment or lab tests from their home. CureComet will have elements that will improve the user experience and comfort in addition to the ability to purchase medicines. CureComet targets to connect users with local pharmacies and clinics so that the process of medicine delivery is fast and affordable. The doctors with various specialties can enroll themselves and the users can book appointment with the doctors. It also allows user to connect with mental counselors all over the country for easy and secretive counseling sessions.
-        It will also help the user as well as the pharmacies to keep records of purchase and sales respectively. All the information can be viewed in one platform. The clinical records of a user can be monitored for future treatment purposes.</p>
-        
-    </div>
+
+    <?php
+            require('connection.php');
+            $user=$_SESSION['username'];
+            $query="SELECT `Username`, `Vendor_ID`, `med_name`, `qty` FROM `cart` WHERE Username='$user'";
+            $cart_list = mysqli_query($con, $query);
+            
+            
+            echo "<br>";
+            
+            if($cart_list)
+            {
+
+                echo "<table border = '1' >";
+                
+                while($arr=mysqli_fetch_array($cart_list,MYSQLI_NUM))
+                {
+                    echo "<tr>";
+                        echo "<td>";
+                            echo $arr[2];
+                            
+                        echo "</td>";
+                        
+                        echo "<td>";
+                            echo "<button onclick=\"document.location='adjust_qty.php?action=minus'\">-</button>";
+                            echo "  $arr[3]  ";
+                            echo "<button onclick=\"document.location='adjust_qty.php?action=plus'\">+</button>";
+                        echo "</td>";
+                        echo "<td>";
+                            echo "<button class='delete-btn' onclick=\"document.location='adjust_qty.php?action=delete'\">Delete</button>";
+                        echo "</td>";
+                    echo "</tr>";
+                }
+                
+                echo "</table>";
+            }
+            
+            
+            
+    ?>
+
 </body>
 </html>
