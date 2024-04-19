@@ -16,7 +16,7 @@
     {
         echo "
         <script type=\"text/javascript\">
-            alert('Your cart has been cleared');
+            alert('Your cart has been cleared & new item added');
            window.location.replace(\"med_list.php?Vendor_ID=$vid\");
         </script>
         ";

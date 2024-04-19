@@ -69,8 +69,8 @@
                 
             }
         ?>
-    <br>
-    <footer>
+    <br><br><br><br><br><br>
+    <footer id="footer">
         &copy;<br>
         Academic Project for BCA final semester<br>
         developed by Subhankar Deb Roy<br>

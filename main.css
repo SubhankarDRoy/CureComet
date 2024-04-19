@@ -39,10 +39,12 @@
     color: #000000;
     text-decoration: none;
     transition: color 0.3s ease;
+    
   }
   
   nav ul li a:hover {
     color: #ff8c00; /* Change to desired hover color */
+    font: 1.1em;
   }
 
   table {
@@ -61,6 +63,7 @@
     text-decoration: none; /* Remove underline */
     font-size: 18px;
     color: blue;
+    transition: color 0.3s ease;
   }
 
   

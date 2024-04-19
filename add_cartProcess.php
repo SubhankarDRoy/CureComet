@@ -9,15 +9,17 @@
     $med_name=$_GET['medname'];
 
     
-    $query="SELECT COUNT(*), `Username`, `Vendor_ID`, `med_name`, `qty` FROM `cart` WHERE Username='$user'";
+    $query="SELECT `Username`, `Vendor_ID`, `med_name`, `qty` FROM `cart` WHERE Username='$user'";
     
     $cart_list=mysqli_query($con,$query);
     $arr=mysqli_fetch_array($cart_list,MYSQLI_NUM);
 
-    if($arr[0]!=0)
+    if($cart_list)
     {
-        if($vid!=$arr[2])
+        
+        if($vid!=$arr[1])
         {
+            
             $_SESSION['vid']=$vid;
             echo "
             <script type=\"text/javascript\">
@@ -34,13 +36,14 @@
         }
         
     }
+    
     $c=0;
     do
     {
-        if($arr[3]==$med_name)
+        if($arr[2]==$med_name)
         {   
             $c++;
-            $query="Update cart set qty=$arr[4]+1 where med_name='$med_name' and Username='$user' and Vendor_ID='$vid'";
+            $query="Update cart set qty=$arr[3]+1 where med_name='$med_name' and Username='$user' and Vendor_ID='$vid'";
             if(mysqli_query($con,$query))
             {
                 echo "
