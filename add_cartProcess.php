@@ -9,17 +9,16 @@
     $med_name=$_GET['medname'];
 
     
-    $query="Select * from cart where Username='".$user."';";
+    $query="SELECT COUNT(*) `Username`, `Vendor_ID`, `med_name`, `qty` FROM `cart` WHERE Username='$user'";
     
     $cart_list=mysqli_query($con,$query);
-    
-    if(!$cart_list)
-    {
-        $arr=mysqli_fetch_array($cart_list,MYSQLI_NUM);
-        echo $arr[1];
+    $arr=mysqli_fetch_array($cart_list,MYSQLI_NUM);
 
-        if($vid!=$arr[1])
+    if($arr[0]!=0)
+    {
+        if($vid!=$arr[2])
         {
+            $_SESSION['vid']=$vid;
             echo "
             <script type=\"text/javascript\">
             if(confirm(\"Your cart contains medicines from other vendor. do you want to clear it ?\")==true)
@@ -38,6 +37,42 @@
     else
     {
         
-        $query="Select * from cart where Username=$user and med_name=$med_name";
-        $query="insert into cart value ($user,$vid,$med_name,1);";
+        $query="Select * from cart where Username=$user";
+        $medCheck=mysqli_query($con,$query);
+        if(!$medCheck)
+        {
+            $c=0;
+            while($arr=mysqli_fetch_array($cart_list,MYSQLI_NUM))
+            {
+                if($arr[2]==$med_name)
+                {   
+                    $c++;
+                    $query="Update cart set qty=$arr[3]+1 where med_name='$med_name' and Username='$user' and Vendor_ID='$vid'";
+                    if(mysqli_query($con,$query))
+                    {
+                        echo "
+                            <script type=\"text/javascript\">
+                                alert('Item updated in the cart');
+                                window.location.replace(\"med_list.php?Vendor_ID=$vid\");
+                            </script>
+                        ";
+                    }
+                }
+                
+            }
+            if($c==0)
+            {
+                $query="INSERT INTO `cart`(`Username`, `Vendor_ID`, `med_name`, `qty`) VALUES ('$user','$vid','$med_name','1');";
+                if(mysqli_query($con,$query))
+                {
+                    echo "
+                        <script type=\"text/javascript\">
+                            alert('Item added to the cart');
+                           window.location.replace(\"med_list.php?Vendor_ID=$vid\");
+                        </script>
+                    ";
+                }
+            }
+        }
+        
     }

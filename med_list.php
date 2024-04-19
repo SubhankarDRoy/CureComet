@@ -16,16 +16,24 @@
                 <li><a href="user_index.php">Home</a></li>
                 <li><a href="L_Test.php">Lab Tests</a></li>
                 <li><a href="appointment.php">Appointments</a></li>
+                <li><a href="cart.php">
+                    <?php
+                        session_start();
+                        $user=$_SESSION['username'];
+                        require('connection.php');
+                        $query="SELECT COUNT(*) FROM cart where Username ='$user'";
+                        $res=mysqli_query($con,$query);
+                        $arr=mysqli_fetch_array($res, MYSQLI_NUM);
+                        echo "Cart($arr[0])";
+                    ?>
+                </a></li>
+                <li><a href="account_detail.php">My Account</a></li>
                 <li><a href="about.php">About</a></li>
-                <li><a href="cart.php">Cart</a></li>
-                <li><a href="orders.php">Orders</a></li>
-                <li><a href="account.php">Accounts</a></li>
                 <li><a href="login.php">Log Out</a></li>
             </ul>
         </nav>
         
         <?php
-            session_start();
             $name=$_SESSION['name'];
             echo "<label id='header-label'> <b>Welcome</b> ".$name."</label>";
         ?>
