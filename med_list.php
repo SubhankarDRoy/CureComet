@@ -73,6 +73,12 @@
                 echo "</table>";
             }
         ?>
-
+    <br>
+    <footer id="footer">
+        &copy;
+        Academic Project for BCA final semester<br>
+        developed by Subhankar Deb Roy<br>
+        Department of Computer Application, St. Edmund's College
+    </footer>
 </body>
 </html>

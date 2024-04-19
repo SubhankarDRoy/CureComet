@@ -39,8 +39,9 @@
         ?>
     </header>
 
-    <table>
+    
         <?php
+        echo "<table>";
             require('connection.php');
             $query="Select * from vendor;";
             $vendor_list = mysqli_query($con, $query);
@@ -68,6 +69,14 @@
                 
             }
         ?>
+    <br>
+    <footer>
+        &copy;<br>
+        Academic Project for BCA final semester<br>
+        developed by Subhankar Deb Roy<br>
+        Department of Computer Application, St. Edmund's College
+    </footer>
+
     
 </body>
 </html>
