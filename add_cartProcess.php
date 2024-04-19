@@ -1,4 +1,19 @@
 <?php
+    $c=0;
+    function add($u,$v,$m)
+    {   
+        require('connection.php');
+        $query="INSERT INTO `cart`(`Username`, `Vendor_ID`, `med_name`, `qty`) VALUES ('$u','$v','$m','1');";
+        if(mysqli_query($con,$query))
+        {
+            echo "
+                <script type=\"text/javascript\">
+                    alert('Item added to the cart');
+                   window.location.replace(\"med_list.php?Vendor_ID=$v\");
+                </script>
+            ";
+        }
+    }
 
     session_start();
     $user=$_SESSION['username'];
@@ -16,8 +31,12 @@
 
     if($cart_list)
     {
-        
-        if($vid!=$arr[1])
+        if(count((array)$arr)==0)
+        {
+            $c=$c+1;
+            add($user,$vid,$med_name);
+        }
+        elseif($vid!=$arr[1])
         {
             
             $_SESSION['vid']=$vid;
@@ -37,7 +56,7 @@
         
     }
     
-    $c=0;
+    
     do
     {
         if($arr[2]==$med_name)
@@ -60,13 +79,5 @@
     if($c==0)
     {
         $query="INSERT INTO `cart`(`Username`, `Vendor_ID`, `med_name`, `qty`) VALUES ('$user','$vid','$med_name','1');";
-        if(mysqli_query($con,$query))
-        {
-            echo "
-                <script type=\"text/javascript\">
-                    alert('Item added to the cart');
-                   window.location.replace(\"med_list.php?Vendor_ID=$vid\");
-                </script>
-            ";
-        }
+        add($user,$vid,$med_name);
     }
