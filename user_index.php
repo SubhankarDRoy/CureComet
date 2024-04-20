@@ -73,7 +73,7 @@
     <footer id="footer">
         &copy;<br>
         Academic Project for BCA final semester<br>
-        developed by Subhankar Deb Roy<br>
+        developed by Subhankar Deb Roy (2021-24)<br>
         Department of Computer Application, St. Edmund's College
     </footer>
 

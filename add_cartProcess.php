@@ -39,12 +39,12 @@
         elseif($vid!=$arr[1])
         {
             
-            $_SESSION['vid']=$vid;
+            
             echo "
             <script type=\"text/javascript\">
             if(confirm(\"Your cart contains medicines from other vendor. do you want to clear it ?\")==true)
             {
-                window.location.replace(\"clear_cartProcess.php\");
+                window.location.replace(\"clear_cartProcess.php?redirect=$vid\");
             }
             else
             {
