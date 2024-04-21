@@ -62,12 +62,12 @@
                         echo "</td>";
                         
                         echo "<td>";
-                            echo "<button onclick=\"document.location='adjust_qty.php?action=minus'\">-</button>";
+                            echo "<button onclick=\"document.location='adjust_cartQty.php?action=minus&vid=$arr[1]&mn=$arr[2]'\">-</button>";
                             echo "  $arr[3]  ";
-                            echo "<button onclick=\"document.location='adjust_qty.php?action=plus'\">+</button>";
+                            echo "<button onclick=\"document.location='adjust_cartQty.php?action=plus&vid=$arr[1]&mn=$arr[2]'\">+</button>";
                         echo "</td>";
                         echo "<td>";
-                            echo "<button class='delete-btn' onclick=\"document.location='adjust_qty.php?action=delete'\">Delete</button>";
+                            echo "<button class='delete-btn' onclick=\"document.location='adjust_cartQty.php?action=delete&vid=$arr[1]&mn=arr[2]'\">Delete</button>";
                         echo "</td>";
                     echo "</tr>";
                 }
