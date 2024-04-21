@@ -24,7 +24,7 @@
     {
         echo "
         <script type=\"text/javascript\">
-            alert('Your cart has been cleared & new item added');
+            alert('Your cart has been cleared');
            window.location.replace(\"$url\");
         </script>
         ";

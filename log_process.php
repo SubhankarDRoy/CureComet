@@ -59,7 +59,7 @@
                  case 'Vendor': header('Location:vendor_index.php');
                             break;
 
-                case 'Admin': header('Location:admin_index.php');
+                case 'Admin': header('Location:Admin/admin_index.php');
                          break;
 
                 case 'DeliverPerson': header('Location:dp_index.php');

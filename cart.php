@@ -73,11 +73,11 @@
                 }
                 
                 echo "</table>";
+                echo "<button class=\"clear-button\" onclick=\"document.location='clear_cartProcess.php?redirect=cart'\">Clear Cart</button>";
             }
-            
-            
-            
     ?>
+    
+    
 
 </body>
 </html>
