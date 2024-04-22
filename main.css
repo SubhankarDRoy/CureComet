@@ -126,6 +126,25 @@
   .clear-button:hover {
     background-color: #7b0f0f; /* Darker red on hover */
   }
+
+  .order-button {
+    position: relative; /* Absolute positioning for the button */
+    top: 0; /* Align to the top of the table container */
+    left: 50%; /* Align to the horizontal center of the table container */
+    border-radius: 5px;
+    transform: translateX(-50%); /* Center the button horizontally */
+    margin-top: 10px; /* Add margin for spacing from the top */
+    padding: 10px 20px; /* Add padding to the button */
+    background-color: #009714; /* Red background color */
+    color: white; /* Text color */
+    border: none; /* Removes button border */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s; /* Smooth transition for background color */
+  }
+  
+  .order-button:hover {
+    background-color: #084d00; /* Darker red on hover */
+  }
   
   /* Footer Styles */
   #footer {

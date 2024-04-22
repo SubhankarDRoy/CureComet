@@ -42,7 +42,7 @@
     <?php
             require('connection.php');
             $user=$_SESSION['username'];
-            $query="SELECT `Username`, `Vendor_ID`, `med_name`, `qty` FROM `cart` WHERE Username='$user'";
+            $query="SELECT c.Username, c.Vendor_ID, c.med_name, c.qty, m.Price FROM cart c, med_list m WHERE c.Username='$user' and m.Vendor_ID=c.Vendor_ID and c.med_name=m.Med_Name";
             $cart_list = mysqli_query($con, $query);
             
             
@@ -57,7 +57,7 @@
                 {
                     echo "<tr>";
                         echo "<td>";
-                            echo $arr[2];
+                            echo $arr[2]."&nbsp; (Price:&#8377;".$arr[4]*$arr[3].")";
                             
                         echo "</td>";
                         
@@ -73,8 +73,64 @@
                 }
                 
                 echo "</table>";
-                echo "<button class=\"clear-button\" onclick=\"document.location='clear_cartProcess.php?redirect=cart'\">Clear Cart</button>";
+                
             }
+
+            $q="SELECT COUNT(*) FROM cart where Username ='$user'";
+            $res=mysqli_query($con,$q);
+            $arr=mysqli_fetch_array($res, MYSQLI_NUM);
+            if($arr[0]>0)
+            {
+                echo "<button class=\"clear-button\" onclick=\"document.location='clear_cartProcess.php?redirect=cart'\">Clear Cart</button>";
+                echo "<br><br><br>";
+                //Bill calculation
+                $query="SELECT c.qty, m.price from cart c,med_list m where c.Username='$user' and m.Vendor_ID=c.Vendor_ID and c.med_name=m.Med_Name";
+
+                $res=mysqli_query($con,$query);
+                $total=0;
+                 while($arr=mysqli_fetch_array($res,MYSQLI_NUM))
+                 {
+                    $total=$arr[0]*$arr[1];
+                 }
+
+                echo "<table>";
+                echo "<tr>";
+                        echo "<td>";
+                            echo "Total Price:";
+                        echo "</td>";
+                        echo "<td>";
+                            echo "&#8377;".$total;
+                        echo "</td>";
+                echo "</tr>";
+                echo "<tr>";
+                        echo "<td>";
+                            echo "Platform Service Charge:";
+                        echo "</td>";
+                        echo "<td>";
+                            echo "&#8377;".(7*$total)/100;
+                        echo "</td>";
+                echo "</tr>";
+                echo "<tr>";
+                        echo "<td>";
+                            echo "Delivery Charges:";
+                        echo "</td>";
+                        echo "<td>";
+                            echo "&#8377;100";
+                        echo "</td>";
+                echo "</tr>";
+                echo "<tr>";
+                        echo "<td>";
+                            echo "Total payable amount:";
+                        echo "</td>";
+                        echo "<td>";
+                            echo "<b>&#8377;".($total+((7*$total)/100)+100)."</b>";
+                        echo "</td>";
+                echo "</tr>";
+                echo "</table>";
+                 
+            }
+
+            echo "<button class=\"order-button\" onclick=\"document.location='order.php'\">Place Order</button>";
     ?>
     
     
