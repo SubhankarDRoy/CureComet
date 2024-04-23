@@ -90,7 +90,7 @@
                 $total=0;
                  while($arr=mysqli_fetch_array($res,MYSQLI_NUM))
                  {
-                    $total=$arr[0]*$arr[1];
+                    $total=$total+$arr[0]*$arr[1];
                  }
 
                 echo "<table>";
