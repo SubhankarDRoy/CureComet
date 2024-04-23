@@ -39,45 +39,5 @@
         ?>
     </header>
 
-    <?php
-            $lid=$_GET['Lab_ID'];
-            require('connection.php');
-            $query="Select * from test_list where lab_id='".$lid."';";
-            $test_list = mysqli_query($con, $query);
-
-            if(!$test_list)
-            {
-                die("error");
-            }
-            
-            while ($arr=mysqli_fetch_array($test_list,MYSQLI_NUM))
-            {
-                echo "<br>";
-                echo "<table border = '1' ><tr>";
-                    echo "<td>";
-                        echo "<h3>".$arr[1]."</h3>";
-                    echo "</td>";
-                    
-                    echo "</tr>";
-
-                    echo "<tr>";
-                        echo "<td><b>Test Type:</b>".$arr[2]."</td>";
-                    echo "</tr><tr>";  
-                        echo "<td><b>Requirements:</b>".$arr[3]."</td>";
-                        echo "<td><b>Price:</b>".$arr[4]."</td>";
-                        echo "<td>";
-                        echo "<button onclick=\"document.location='book_test.php?lid=$arr[0]&testname=$arr[1]'\">Book</button";
-                        echo "</td>";
-                    echo "</tr>";
-                echo "</table>";
-            }
-        ?>
-    <br>
-    <footer id="footer">
-        &copy;
-        Academic Project for BCA final semester<br>
-        developed by Subhankar Deb Roy<br>
-        Department of Computer Application, St. Edmund's College
-    </footer>
 </body>
 </html>
