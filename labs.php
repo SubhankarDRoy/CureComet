@@ -14,7 +14,7 @@
         <nav>
             <ul class="menu">
                 <li><a href="user_index.php">Home</a></li>
-                <li><a href="labs.php">Lab Tests</a></li>
+                <li><a href="L_Test.php">Lab Tests</a></li>
                 <li><a href="appointment.php">Appointments</a></li>
                 <li><a href="cart.php">
                     <?php
@@ -43,7 +43,7 @@
         <?php
         echo "<table>";
             require('connection.php');
-            $query="Select * from vendor;";
+            $query="Select * from labs;";
             $vendor_list = mysqli_query($con, $query);
 
             if(!$vendor_list)
@@ -56,14 +56,14 @@
                 echo "<br>";
                 echo "<table border = '1' ><tr>";
                     echo "<td>";
-                        echo "<a href='med_list.php?Vendor_ID=$arr[0]'>".$arr[2]."</a>";
+                        echo "<a href='test_list.php?Lab_ID=$arr[0]'>".$arr[2]."</a>";
                     echo "</td>";
                     echo "</tr>";
 
                     echo "<tr>";
-                    echo "<td><b>Address:</b>".$arr[5]."</td>";
+                    echo "<td><b>Address:</b>".$arr[6]."</td>";
                     echo "</tr><tr>";   
-                    echo "<td><b>Contact:</b>".$arr[3]."</td>";
+                    echo "<td><b>Contact:</b>".$arr[4]."</td>";
                     echo "</tr>";
                 echo "</table>";
                 
