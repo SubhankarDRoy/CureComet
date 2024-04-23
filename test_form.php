@@ -44,6 +44,7 @@
 
         $lid=$_GET['lid'];
         $tn=$_GET['testname'];
+        $p=$_GET['price'];
         $user=$_SESSION['username'];
     ?>
 
@@ -52,6 +53,7 @@
     <center>
         <form class="form" action="test_book.php" method="POST">
             <input type="text" name="test_name" placeholder="Test Name" disabled value="<?php echo $tn;?>"><br>
+            <input type="text" name="test_name" placeholder="Test Name" disabled value="<?php echo '&#8377;'.$p;?>"><br>
             <input type="text" name="patient_no" placeholder="Patient Name" required><br>
             <input type="date" name="test_date" placeholder="Test Date" required><br>
             <input type="time" name="test_time" placeholder="Test Time" required><br>

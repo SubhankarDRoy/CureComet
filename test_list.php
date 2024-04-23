@@ -66,7 +66,7 @@
                         echo "<td><b>Requirements:</b>".$arr[3]."</td>";
                         echo "<td><b>Price:</b>".$arr[4]."</td>";
                         echo "<td>";
-                        echo "<button onclick=\"document.location='test_form.php?lid=$arr[0]&testname=$arr[1]'\">Book</button";
+                        echo "<button onclick=\"document.location='test_form.php?lid=$arr[0]&testname=$arr[1]&price=$arr[4]'\">Book</button";
                         echo "</td>";
                     echo "</tr>";
                 echo "</table>";
