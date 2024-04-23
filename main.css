@@ -146,6 +146,49 @@
     background-color: #084d00; /* Darker red on hover */
   }
   
+  /* Form container */
+.form {
+  background-color: #f2f2f2; /* Greyish color for background */
+  padding: 15px;
+  border-radius: 8px;
+}
+
+/* Form container */
+.form {
+  background-color: #cff9d8; /* Greyish color for background */
+  padding: 15px;
+  border-radius: 8px;
+  width: 300px; /* Adjusted width for the form container */
+  margin: 0 auto; /* Center the form horizontally */
+}
+
+/* Form fields */
+.form input {
+  background-color: #f2f2f2; /* Matching background color for input boxes */
+  padding: 8px;
+  margin-bottom: 8px; /* Gap between fields */
+  border: none;
+  border-radius: 4px;
+  width: calc(100% - 16px); /* Adjusted width for input fields */
+}
+
+/* Submit button */
+.form input[type="submit"] {
+  background-color: #369c39; /* Green color for submit button */
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%; /* Button width same as input fields */
+}
+
+/* Hover effect for submit button */
+.form input[type="submit"]:hover {
+  background-color: #0d4d10; /* Darker shade of green on hover */
+}
+
+  
   /* Footer Styles */
   #footer {
     display: none;
@@ -161,6 +204,8 @@
   html:not(:target) #footer {
     display: block;
   }
+
+
   
 
 /*for mobile content*/

@@ -38,46 +38,26 @@
             echo "<label id='header-label'> <b>Welcome</b> ".$name."</label>";
         ?>
     </header>
-
     <?php
-            $lid=$_GET['Lab_ID'];
-            require('connection.php');
-            $query="Select * from test_list where lab_id='".$lid."';";
-            $test_list = mysqli_query($con, $query);
 
-            if(!$test_list)
-            {
-                die("error");
-            }
-            
-            while ($arr=mysqli_fetch_array($test_list,MYSQLI_NUM))
-            {
-                echo "<br>";
-                echo "<table border = '1' ><tr>";
-                    echo "<td>";
-                        echo "<h3>".$arr[1]."</h3>";
-                    echo "</td>";
-                    
-                    echo "</tr>";
+        require('connection.php');
 
-                    echo "<tr>";
-                        echo "<td><b>Test Type:</b>".$arr[2]."</td>";
-                    echo "</tr><tr>";  
-                        echo "<td><b>Requirements:</b>".$arr[3]."</td>";
-                        echo "<td><b>Price:</b>".$arr[4]."</td>";
-                        echo "<td>";
-                        echo "<button onclick=\"document.location='test_form.php?lid=$arr[0]&testname=$arr[1]'\">Book</button";
-                        echo "</td>";
-                    echo "</tr>";
-                echo "</table>";
-            }
-        ?>
-    <br>
-    <footer id="footer">
-        &copy;
-        Academic Project for BCA final semester<br>
-        developed by Subhankar Deb Roy<br>
-        Department of Computer Application, St. Edmund's College
-    </footer>
+        $lid=$_GET['lid'];
+        $tn=$_GET['testname'];
+        $user=$_SESSION['username'];
+    ?>
+
+<div class="test_form">
+    <br><br><br>
+    <center>
+        <form class="form" action="book_test.php" method="POST">
+            <input type="text" name="test_name" placeholder="Test Name" disabled value="<?php echo $tn;?>"><br>
+            <input type="text" name="patient_no" placeholder="Patient Name" required><br>
+            <input type="date" name="test_date" placeholder="Test Date" required><br>
+            <input type="time" name="test_time" placeholder="Test Time" required><br>
+            <input type="submit" name="book" value="Book Test"></br><br>
+        </form>
+    </center>    
+    </div>
 </body>
 </html>

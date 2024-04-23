@@ -5,7 +5,7 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>CureComet Login</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='login.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <script src='main.js'></script>
 </head>
 <body>
@@ -16,6 +16,7 @@
     </header>
 
     <div class="login_form">
+        <br><br>
     <center>
         <form class="form" action="log_process.php" method="POST">
             <img src="Images/login.png" height="80px" width="80px"><br><br>
@@ -34,5 +35,13 @@
         </form>
     </center>    
     </div>
+
+    <br><br>
+    <footer id="footer">
+        &copy;<br>
+        Academic Project for BCA final semester<br>
+        developed by Subhankar Deb Roy (2021-24)<br>
+        Department of Computer Application, St. Edmund's College
+    </footer>
 </body>
 </html>
