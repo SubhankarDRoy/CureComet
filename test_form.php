@@ -50,7 +50,7 @@
 <div class="test_form">
     <br><br><br>
     <center>
-        <form class="form" action="book_test.php" method="POST">
+        <form class="form" action="test_book.php" method="POST">
             <input type="text" name="test_name" placeholder="Test Name" disabled value="<?php echo $tn;?>"><br>
             <input type="text" name="patient_no" placeholder="Patient Name" required><br>
             <input type="date" name="test_date" placeholder="Test Date" required><br>
