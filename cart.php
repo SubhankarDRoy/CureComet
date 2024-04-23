@@ -14,7 +14,7 @@
         <nav>
             <ul class="menu">
                 <li><a href="user_index.php">Home</a></li>
-                <li><a href="L_Test.php">Lab Tests</a></li>
+                <li><a href="labs.php">Lab Tests</a></li>
                 <li><a href="appointment.php">Appointments</a></li>
                 <li><a href="cart.php">
                     <?php
