@@ -127,10 +127,11 @@
                         echo "</td>";
                 echo "</tr>";
                 echo "</table>";
-                 
+            
+                echo "<button class=\"order-button\" onclick=\"document.location='order.php'\">Place Order</button>";
             }
 
-            echo "<button class=\"order-button\" onclick=\"document.location='order.php'\">Place Order</button>";
+            
     ?>
     
     
