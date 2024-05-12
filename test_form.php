@@ -52,13 +52,13 @@
     <br><br><br>
     <center>
         <form class="form" action="test_book.php" method="POST">
-            <input type="text" name="lab_id" placeholder="Lab ID" disabled value="<?php echo $lid;?>"><br>
-            <input type="text" name="test_name" placeholder="Test Name" disabled value="<?php echo $tn;?>"><br>
+            <input type="hidden" name="lab_id" placeholder="Lab ID" value="<?php echo $lid;?>"><br>
+            <input type="hidden" name="test_name" placeholder="Test Name" value="<?php echo $tn;?>"><br>
             <input type="text" name="test_price" placeholder="Test Price" disabled value="<?php echo '&#8377;'.$p;?>"><br>
             <input type="text" name="patient_name" placeholder="Patient Name" required><br>
             <input type="date" name="test_date" placeholder="Test Date" required><br>
             <input type="time" name="test_time" placeholder="Test Time" required><br>
-            <input type="submit" name="book" value="Book Test"></br><br>
+            <input type="submit" name="book" value="Request Booking"></br><br>
         </form>
     </center>    
     </div>

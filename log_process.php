@@ -18,7 +18,7 @@
     }
     else if ($user_type=="Doctor")
     {
-        $query="Select Doc_ID, Password, Name from doctor where Doc_ID like '$user'";
+        $query="Select Doc_ID, Password, Name from doctors where Doc_ID like '$user'";
     }
     else if ($user_type=="DeliveryPerson")
     {
