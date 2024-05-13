@@ -110,7 +110,8 @@
                             echo "Platform Service Charge:";
                         echo "</td>";
                         echo "<td>";
-                            echo "&#8377;".(7*$total)/100;
+                            $platform=ceil((7*$total)/100);
+                            echo "&#8377;".$platform;
                         echo "</td>";
                 echo "</tr>";
                 echo "<tr>";
@@ -126,12 +127,12 @@
                             echo "Total payable amount:";
                         echo "</td>";
                         echo "<td>";
-                            echo "<b>&#8377;".($total+((7*$total)/100)+100)."</b>";
+                            echo "<b>&#8377;".($total+$platform)."</b>";
                         echo "</td>";
                 echo "</tr>";
                 echo "</table>";
             
-                echo "<button class=\"order-button\" onclick=\"document.location='order.php?ol=$order_list&vid=$vid&price=$total&platform=(7*$total)/100&delivery=100'\">Place Order</button>";
+                echo "<button class=\"order-button\" onclick=\"document.location='order.php?ol=$order_list&vid=$vid&price=$total&platform=$platform&delivery=100'\">Place Order</button>";
             }
             
             

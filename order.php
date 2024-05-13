@@ -62,7 +62,7 @@
             <input type="hidden" name="vendor_id" placeholder="Vendor ID" value="<?php echo $vid;?>"><br>
 
             <input type="text" name="order_list" placeholder="Order list" disabled value="<?php echo $orderlist;?>"><br>
-            <input type="text" name="price" placeholder="Price" value="<?php echo "&#8377;".$total;?>"><br>
+            <input type="text" name="total_price" placeholder="Price" disabled value="<?php echo $total;?>"><br>
             <input type="text" name="address" placeholder="Address" required><br>
             <input type="file" name="file" required><br>
             
