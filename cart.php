@@ -47,14 +47,17 @@
             
             
             echo "<br>";
-            
+            $order_list="";
             if($cart_list)
             {
-
+                
                 echo "<table border = '1' >";
                 
                 while($arr=mysqli_fetch_array($cart_list,MYSQLI_NUM))
                 {
+                    $vid=$arr[1];
+                    $order_list=$order_list.$arr[2].",".$arr[3].";";
+
                     echo "<tr>";
                         echo "<td>";
                             echo $arr[2]."&nbsp; (Price:&#8377;".$arr[4]*$arr[3].")";
@@ -128,9 +131,9 @@
                 echo "</tr>";
                 echo "</table>";
             
-                echo "<button class=\"order-button\" onclick=\"document.location='order.php'\">Place Order</button>";
+                echo "<button class=\"order-button\" onclick=\"document.location='order.php?ol=$order_list&vid=$vid&price=$total&platform=(7*$total)/100&delivery=100'\">Place Order</button>";
             }
-
+            
             
     ?>
     

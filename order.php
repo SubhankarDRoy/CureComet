@@ -39,5 +39,36 @@
         ?>
     </header>
 
+    <?php
+        require('connection.php');
+
+        $vid=$_GET['vid'];
+        $user=$_SESSION['username'];
+        $price=$_GET['price'];
+        $platform=$_GET['platform'];
+        $delivery=$_GET['delivery'];
+        $orderlist=$_GET['ol'];
+        $total=(int)$price+(int)$platform+(int)$delivery;
+    ?>
+
+    <div class="order_form">
+    <br><br><br>
+    <center>
+        <form class="form" action="order_confirm.php" method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="order_list" placeholder="Order list" value="<?php echo $orderlist;?>"><br>
+            <input type="hidden" name="price" placeholder="Price" value="<?php echo $price;?>"><br>
+            <input type="hidden" name="platform" placeholder="Platform Charge" value="<?php echo $platform;?>"><br>
+            <input type="hidden" name="delivery" placeholder="Delivery Charge" value="<?php echo $delivery;?>"><br>
+            <input type="hidden" name="vendor_id" placeholder="Vendor ID" value="<?php echo $vid;?>"><br>
+
+            <input type="text" name="order_list" placeholder="Order list" disabled value="<?php echo $orderlist;?>"><br>
+            <input type="text" name="price" placeholder="Price" value="<?php echo "&#8377;".$total;?>"><br>
+            <input type="text" name="address" placeholder="Address" required><br>
+            <input type="file" name="file" required><br>
+            
+            <input type="submit" name="book" value="Order Medicines"></br><br>
+        </form>
+    </center>    
+    </div>
 </body>
 </html>
