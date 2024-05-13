@@ -43,7 +43,7 @@
         
             require('connection.php');
             $user=$_SESSION['username'];
-            $query="Select * from orders where username like '$user';";
+            $query="Select * from test_booking where username like '$user';";
             $user_orders = mysqli_query($con, $query);
 
             if(!$user_orders)
@@ -55,35 +55,25 @@
             {
                 echo "<br>";
                 echo "<table border = '1' ><tr>";
-                    echo "<td><b>Ordered Medicines:</b> </td>";
+                    echo "<td><b>Test Name:</b> </td>";
                     echo "<td>";
-                        $str = $arr[4];
-                        $pattern = '/;/i';
-                        echo preg_replace($pattern, '<br>', $str);
+                        echo $arr[4];
                     echo "</td>";
                     echo "</tr>";
 
                     echo "<tr>";
-                    echo "<td><b>Total Price:</b></td><td>".$arr[5]+$arr[6]+$arr[7]."</td>";
+                    echo "<td><b>Patient Name:</b></td><td>".$arr[3]."</td>";
+                    echo "</tr>";  
+                    echo "<tr>";
+                    echo "<td><b>Date:</b></td><td>".$arr[5]."</td>";
                     echo "</tr><tr>";   
-                    echo "<td><b>Address:</b></td><td>".$arr[8]."</td>";
+                    echo "<td><b>Time:</b></td><td>".$arr[6]."</td>";
                     echo "</tr>";
 
                     echo "<tr>";
-                    echo "<td><b>Total Price:</b></td><td>&#8377;".$arr[5]+$arr[6]+$arr[7]."</td>";
+                    echo "<td><b>Status:</b></td><td>".$arr[7]."</td>";
                     echo "</tr>";
 
-                    echo "<tr>";
-                    echo "<td><b>Date:</b></td><td>".$arr[11]."</td>";
-                    echo "</tr>";
-
-                    echo "<tr>";
-                    echo "<td><b>Status:</b></td><td>".$arr[10]."</td>";
-                    echo "</tr>";
-
-                    echo "<tr>";
-                    echo "<td><b>Uploaded Prescription:</b></td><td><a href='prescriptions/$arr[9]' target='_blank'>Click here to view</a></td>";
-                    echo "</tr>";
 
                 echo "</table>";
                 
