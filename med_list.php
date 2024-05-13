@@ -67,7 +67,7 @@
                         echo "<td><b>Qty:</b>".$arr[5]."</td>";
                         echo "<td><b>Price:</b>".$arr[4]."</td>";
                         echo "<td>";
-                        echo "<button onclick=\"document.location='add_cartProcess.php?Vendor_ID=$vid&medname=$arr[1]'\">+Add</button";
+                        echo "<button onclick=\"document.location='add_cartProcess.php?Vendor_ID=$vid&medname=$arr[1]'\">+Add</button>";
                         echo "</td>";
                     echo "</tr>";
                 echo "</table>";

@@ -108,7 +108,7 @@
     position: relative; /* Relative positioning for the table container */
   }
 
-  .clear-button {
+  .red-button {
     position: relative; /* Absolute positioning for the button */
     top: 0; /* Align to the top of the table container */
     left: 50%; /* Align to the horizontal center of the table container */
@@ -123,7 +123,7 @@
     transition: background-color 0.3s; /* Smooth transition for background color */
   }
   
-  .clear-button:hover {
+  .red-button:hover {
     background-color: #7b0f0f; /* Darker red on hover */
   }
 

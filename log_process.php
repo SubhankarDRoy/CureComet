@@ -18,7 +18,7 @@
     }
     else if ($user_type=="Doctor")
     {
-        $query="Select Doc_ID, Password, Name from doctors where Doc_ID like '$user'";
+        $query="Select doctor_id, Password, Name from doctors where doctor_id like '$user'";
     }
     else if ($user_type=="DeliveryPerson")
     {
@@ -53,13 +53,13 @@
                 case 'User': header('Location:user_index.php');
                                 break;
 
-                case 'Doctor': header('Location:doc_index.php');
+                case 'Doctor': header('Location:doctor_index.php');
                            break;
 
                  case 'Vendor': header('Location:vendor_index.php');
                             break;
 
-                case 'Admin': header('Location:Admin/admin_index.php');
+                case 'Admin': header('Location:admin_index.php');
                          break;
 
                 case 'DeliverPerson': header('Location:dp_index.php');
