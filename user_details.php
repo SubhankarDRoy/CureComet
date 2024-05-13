@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<body>
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
@@ -8,13 +8,13 @@
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <script src='main.js'></script>
 </head>
-<body>
+
 <header>
         <img class="logo" src="Images/curecomet_HQ.png" width="200px" height="150px" >
         <nav>
             <ul class="menu">
                 <li><a href="user_index.php">Home</a></li>
-                <li><a href="labs.php">Lab Tests</a></li>
+                <li><a href="L_Test.php">Lab Tests</a></li>
                 <li><a href="appointment.php">Appointments</a></li>
                 <li><a href="cart.php">
                     <?php
@@ -39,35 +39,65 @@
         ?>
     </header>
 
-    
-        <?php
+    <?php
+        $user=$_SESSION['username'];
         
             require('connection.php');
-            $query="Select * from vendor;";
-            $vendor_list = mysqli_query($con, $query);
+            $query="Select * from users where USername like '$user';";
+            $user_details = mysqli_query($con, $query);
 
-            if(!$vendor_list)
+            if(!$user_details)
             {
                 die("error");
             }
-            
-            while ($arr=mysqli_fetch_array($vendor_list,MYSQLI_NUM))
+            echo "<br><br>";
+            echo "<table border = '1' >";
+            echo "<tr><td><h3>Account Details</td></tr>";
+            while ($arr=mysqli_fetch_array($user_details,MYSQLI_NUM))
             {
-                echo "<br>";
-                echo "<table border = '1' ><tr>";
+                echo "<tr>";
                     echo "<td>";
-                        echo "<a href='med_list.php?Vendor_ID=$arr[0]'>".$arr[2]."</a>";
+                        echo "<b>Username: </b>";
+                    echo "</td>";
+                    echo "<td>";
+                        echo "$arr[0]";
                     echo "</td>";
                     echo "</tr>";
 
-                    echo "<tr>";
-                    echo "<td><b>Address:</b>".$arr[5]."</td>";
-                    echo "</tr><tr>";   
-                    echo "<td><b>Contact:</b>".$arr[3]."</td>";
+                    echo "<td>";
+                        echo "<b>Name: </b>";
+                    echo "</td>";
+                    echo "<td>";
+                        echo "$arr[2]";
+                    echo "</td>";
                     echo "</tr>";
-                echo "</table>";
-                
+
+                    echo "<td>";
+                        echo "<b>Date of Birth: </b>";
+                    echo "</td>";
+                    echo "<td>";
+                        echo "$arr[3]";
+                    echo "</td>";
+                    echo "</tr>";
+
+                    echo "<td>";
+                        echo "<b>Phone Number: </b>";
+                    echo "</td>";
+                    echo "<td>";
+                        echo "$arr[4]";
+                    echo "</td>";
+                    echo "</tr>";
+
+                    echo "<td>";
+                        echo "<b>Email: </b>";
+                    echo "</td>";
+                    echo "<td>";
+                        echo "$arr[5]";
+                    echo "</td>";
+                    echo "</tr>";
+
             }
+            echo "</table>";
         ?>
     <br><br><br><br><br><br>
     <footer id="footer">
@@ -77,6 +107,5 @@
         Department of Computer Application, St. Edmund's College
     </footer>
 
-    
-</body>
+    </body>
 </html>

@@ -8,13 +8,13 @@
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <script src='main.js'></script>
 </head>
-<body>
+
 <header>
         <img class="logo" src="Images/curecomet_HQ.png" width="200px" height="150px" >
         <nav>
             <ul class="menu">
                 <li><a href="user_index.php">Home</a></li>
-                <li><a href="labs.php">Lab Tests</a></li>
+                <li><a href="L_Test.php">Lab Tests</a></li>
                 <li><a href="appointment.php">Appointments</a></li>
                 <li><a href="cart.php">
                     <?php
@@ -38,38 +38,26 @@
             echo "<label id='header-label'> <b>Welcome</b> ".$name."</label>";
         ?>
     </header>
-
+    <br><br><br>
+    <div class="account_content"></div>
+        <br>
+        <table border = '1' >
+            <tr>
+                <td><a href="user_details.php">User Details</a></td>  
+            </tr>
+            <tr>
+                <td><a href="user_orders.php">Orders</a></td>
+            </tr>
+            <tr>
+            <td><a href="user_tests.php">Lab Tests</a></td>
+            </tr>
+            <tr>
+            <td><a href="user_appointments.php">Appointments</a></td>
+            </tr>
+        </table>
+    </div>      
     
-        <?php
-        
-            require('connection.php');
-            $query="Select * from vendor;";
-            $vendor_list = mysqli_query($con, $query);
-
-            if(!$vendor_list)
-            {
-                die("error");
-            }
-            
-            while ($arr=mysqli_fetch_array($vendor_list,MYSQLI_NUM))
-            {
-                echo "<br>";
-                echo "<table border = '1' ><tr>";
-                    echo "<td>";
-                        echo "<a href='med_list.php?Vendor_ID=$arr[0]'>".$arr[2]."</a>";
-                    echo "</td>";
-                    echo "</tr>";
-
-                    echo "<tr>";
-                    echo "<td><b>Address:</b>".$arr[5]."</td>";
-                    echo "</tr><tr>";   
-                    echo "<td><b>Contact:</b>".$arr[3]."</td>";
-                    echo "</tr>";
-                echo "</table>";
-                
-            }
-        ?>
-    <br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br>
     <footer id="footer">
         &copy;<br>
         Academic Project for BCA final semester<br>
@@ -77,6 +65,5 @@
         Department of Computer Application, St. Edmund's College
     </footer>
 
-    
 </body>
 </html>
