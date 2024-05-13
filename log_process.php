@@ -32,6 +32,10 @@
     {
         $query="Select Coun_ID, Password, Name from counsellor where Coun_ID like '$user'";
     }
+    else
+    {
+        $query="Select lab_id, password, lab_name from labs where lab_id like '$user'";
+    }
 
     $cred=mysqli_query($con, $query);
     
@@ -66,6 +70,8 @@
                              break;
 
                 case 'Counsellor': header('Location:coun_index.php');
+                                 break;
+            case 'Lab': header('Location:lab_index.php');
                                  break;
             }
 	    }

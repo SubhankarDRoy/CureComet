@@ -24,6 +24,7 @@
                 <option value="Admin">Admin</option>
                 <option value="User">User</option>
                 <option value="Doctor">Doctor</option>
+                <option value="Lab">Lab</option>
                 <option value="Vendor">Vendor</option>
                 <option value="DeliveryPerson">Delivery Person</option>
                 <option value="Counsellor">Counsellor</option>

@@ -33,19 +33,19 @@
         $user=$_SESSION['username'];
 
         $status=$_GET['status'];
-        $aid=$_GET['aid'];
+        $bid=$_GET['bid'];
         $sql="";
         switch($status)
         {
-            case "confirm": $sql="UPDATE appointments SET `status`='confirmed' where appointment_id=$aid";
+            case "confirm": $sql="UPDATE test_booking SET `status`='confirmed' where booking_id=$bid";
                             break;
 
-            case "reject": $sql="UPDATE appointments SET `status`='rejected' where appointment_id=$aid";
+            case "reject": $sql="UPDATE test_booking SET `status`='rejected' where booking_id=$bid";
                             break;
             case "adjust_confirm" : echo "
                                     <script type=\"text/javascript\">
                                         let new_status=prompt(\"Please enter the new status\");
-                                        window.location.href = \"status_update.php?status=confirmed-\"+new_status+\"&aid=\"+$aid+\"\";
+                                        window.location.href = \"status_booking.php?status=confirmed-\"+new_status+\"&bid=\"+$bid+\"\";
                                     </script>
                                     ";
                                     break;
@@ -53,7 +53,7 @@
             case "reason_reject" : echo "
                                     <script type=\"text/javascript\">
                                         let new_status=prompt(\"Please enter the new status\");
-                                        window.location.href = \"status_update.php?status=rejected-\"+new_status+\"&aid=\"+$aid+\"\";
+                                        window.location.href = \"status_booking.php?status=rejected-\"+new_status+\"&bid=\"+$bid+\"\";
                                     </script>
                                     ";
                                     break;
@@ -66,7 +66,7 @@
             {
                 echo "<script type=\"text/javascript\">
                     alert('Status Updated');
-                   window.location.replace(\"doctor_index.php\");
+                   window.location.replace(\"lab_index.php\");
                 </script>";
             }
             else
