@@ -84,7 +84,7 @@
             $arr=mysqli_fetch_array($res, MYSQLI_NUM);
             if($arr[0]>0)
             {
-                echo "<button class=\"clear-button\" onclick=\"document.location='clear_cartProcess.php?redirect=cart'\">Clear Cart</button>";
+                echo "<button class=\"red-button\" onclick=\"document.location='clear_cartProcess.php?redirect=cart'\">Clear Cart</button>";
                 echo "<br><br><br>";
                 //Bill calculation
                 $query="SELECT c.qty, m.price from cart c,med_list m where c.Username='$user' and m.Vendor_ID=c.Vendor_ID and c.med_name=m.Med_Name";

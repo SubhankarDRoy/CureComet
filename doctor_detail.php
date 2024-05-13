@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<body>
+<html>
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
@@ -8,32 +8,20 @@
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <script src='main.js'></script>
 </head>
-
+<body>
 <header>
         <img class="logo" src="Images/curecomet_HQ.png" width="200px" height="150px" >
         <nav>
             <ul class="menu">
-                <li><a href="user_index.php">Home</a></li>
-                <li><a href="L_Test.php">Lab Tests</a></li>
-                <li><a href="appointment.php">Appointments</a></li>
-                <li><a href="cart.php">
-                    <?php
-                        session_start();
-                        $user=$_SESSION['username'];
-                        require('connection.php');
-                        $query="SELECT COUNT(*) FROM cart where Username ='$user'";
-                        $res=mysqli_query($con,$query);
-                        $arr=mysqli_fetch_array($res, MYSQLI_NUM);
-                        echo "Cart($arr[0])";
-                    ?>
-                </a></li>
-                <li><a href="account_detail.php">My Account</a></li>
-                <li><a href="about.php">About</a></li>
-                <li><a href="login.php">Log Out</a></li>
+                <li><a href="doctor_index.php">Home</a></li>
+                <li><a href="doctor_history.php">History</a></li>
+                <li><a href="doctor_detail.php">My Account</a></li>
+                <li><a href="logout_process.php">Log Out</a></li>
             </ul>
         </nav>
         
         <?php
+            session_start();
             $name=$_SESSION['name'];
             echo "<label id='header-label'> <b>Welcome</b> ".$name."</label>";
         ?>
@@ -43,7 +31,7 @@
         $user=$_SESSION['username'];
         
             require('connection.php');
-            $query="Select * from users where USername like '$user';";
+            $query="Select * from doctors where doctor_id like '$user';";
             $user_details = mysqli_query($con, $query);
 
             if(!$user_details)
@@ -57,14 +45,14 @@
             {
                 echo "<tr>";
                     echo "<td>";
-                        echo "<b>Username: </b>";
+                        echo "<b>Doctor_ID: </b>";
                     echo "</td>";
                     echo "<td>";
                         echo "$arr[0]";
                     echo "</td>";
                     echo "</tr>";
 
-                    echo "<td>";
+                    echo "<tr><td>";
                         echo "<b>Name: </b>";
                     echo "</td>";
                     echo "<td>";
@@ -73,7 +61,7 @@
                     echo "</tr>";
 
                     echo "<tr><td>";
-                        echo "<b>Date of Birth: </b>";
+                        echo "<b>Phone Number: </b>";
                     echo "</td>";
                     echo "<td>";
                         echo "$arr[3]";
@@ -81,7 +69,7 @@
                     echo "</tr>";
 
                     echo "<tr><td>";
-                        echo "<b>Phone Number: </b>";
+                        echo "<b>Email: </b>";
                     echo "</td>";
                     echo "<td>";
                         echo "$arr[4]";
@@ -89,10 +77,18 @@
                     echo "</tr>";
 
                     echo "<tr><td>";
-                        echo "<b>Email: </b>";
+                        echo "<b>Qualification: </b>";
                     echo "</td>";
                     echo "<td>";
                         echo "$arr[5]";
+                    echo "</td>";
+                    echo "</tr>";
+
+                    echo "<tr><td>";
+                        echo "<b>Clinic: </b>";
+                    echo "</td>";
+                    echo "<td>";
+                        echo "$arr[6]";
                     echo "</td>";
                     echo "</tr>";
 

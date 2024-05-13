@@ -32,18 +32,18 @@
         
             require('connection.php');
             $user=$_SESSION['username'];
-            $query="Select Count(*) from appointments where doctor_id like '$user' and status like 'Under Review'";
+            $query="Select Count(*) from appointments where doctor_id like '$user'";
             $appointment_count=mysqli_query($con,$query);
             $arr=mysqli_fetch_array($appointment_count,MYSQLI_NUM);
             if($arr[0]==0)
             {
                 echo "<br><br><br><br><br>";
-                echo "<center><h2>No appointment for review</h2></center>";
+                echo "<center><h2>No appointments requested</h2></center>";
                 echo "<br><br><br><br><br>";
             }
 
 
-            $query="Select * from appointments where doctor_id like '$user' and status like 'Under Review';";
+            $query="Select * from appointments where doctor_id like '$user';";
             $vendor_list = mysqli_query($con, $query);
 
             if(!$vendor_list)
@@ -68,16 +68,13 @@
                     echo "</tr>";
 
                     echo "<tr>";
-                        echo "<td><button onclick=\"document.location='alter_appointment.php?status=confirm&aid=$arr[0]'\">Confirm</button</td>";
-                        echo "<td><button onclick=\"document.location='alter_appointment.php?status=adjust_confirm&aid=$arr[0]'\">Confirm with adjustment</button</td>";
-                        echo "<td><button class=\"red-button\" onclick=\"document.location='alter_appointment.php?status=reject&aid=$arr[0]'\">Reject</button</td>";
-                        echo "<td><button class=\"red-button\" onclick=\"document.location='alter_appointment.php?status=reason_reject&aid=$arr[0]'\">Reject with reason</button</td>";
+                        echo "<td>Status:</td><td>$arr[6]</td>";
                     echo "</tr>";
                 echo "</table>";
                 
             }
         ?>
-    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br>
     <footer id="footer">
         &copy;<br>
         Academic Project for BCA final semester<br>
