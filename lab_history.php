@@ -57,6 +57,10 @@
                 echo "<br>";
                 echo "<table border = '1' >";
                     echo "<tr>";
+                        echo "<td>Booking ID:</td><td>$arr[0]</td>";
+                    echo "</tr>";
+
+                    echo "<tr>";
                         echo "<td>Patient Name:</td><td>$arr[3]</td>";
                     echo "</tr>";
 
@@ -65,15 +69,19 @@
                     echo "</tr>";
 
                     echo "<tr>";
-                        echo "<td>Test Date:</td><td>$arr[5]</td>";
+                        echo "<td>Contact:</td><td>$arr[5]</td>";
                     echo "</tr>";
 
                     echo "<tr>";
-                        echo "<td>Test Time:</td><td>$arr[6]</td>";
+                        echo "<td>Test Date:</td><td>$arr[6]</td>";
                     echo "</tr>";
 
                     echo "<tr>";
-                        echo "<td>Status:</td><td>$arr[7]</td>";
+                        echo "<td>Test Time:</td><td>$arr[7]</td>";
+                    echo "</tr>";
+
+                    echo "<tr>";
+                        echo "<td>Status:</td><td>$arr[8]</td>";
                     echo "</tr>";
                 echo "</table>";
                 
