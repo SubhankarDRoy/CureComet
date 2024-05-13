@@ -69,11 +69,15 @@
                     echo "</tr>";
 
                     echo "<tr>";
-                        echo "<td>Appointment Date:</td><td>$arr[5]</td>";
+                        echo "<td>Contact:</td><td>$arr[5]</td>";
                     echo "</tr>";
 
                     echo "<tr>";
-                        echo "<td>Appointment Time:</td><td>$arr[6]</td>";
+                        echo "<td>Appointment Date:</td><td>$arr[6]</td>";
+                    echo "</tr>";
+
+                    echo "<tr>";
+                        echo "<td>Appointment Time:</td><td>$arr[7]</td>";
                     echo "</tr>";
 
                     echo "<tr>";
