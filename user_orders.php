@@ -40,64 +40,50 @@
     </header>
 
     <?php
-        $user=$_SESSION['username'];
         
             require('connection.php');
-            $query="Select * from users where USername like '$user';";
-            $user_details = mysqli_query($con, $query);
+            $user=$_SESSION['username'];
+            $query="Select * from orders where username like '$user';";
+            $user_orders = mysqli_query($con, $query);
 
-            if(!$user_details)
+            if(!$user_orders)
             {
                 die("error");
             }
-            echo "<br><br>";
-            echo "<table border = '1' >";
-            echo "<tr><td><h3>Account Details</td></tr>";
-            while ($arr=mysqli_fetch_array($user_details,MYSQLI_NUM))
+            
+            while ($arr=mysqli_fetch_array($user_orders,MYSQLI_NUM))
             {
-                echo "<tr>";
+                echo "<br>";
+                echo "<table border = '1' ><tr>";
+                    echo "<td><b>Ordered Medicines:</b> </td>";
                     echo "<td>";
-                        echo "<b>Username: </b>";
-                    echo "</td>";
-                    echo "<td>";
-                        echo "$arr[0]";
-                    echo "</td>";
-                    echo "</tr>";
-
-                    echo "<td>";
-                        echo "<b>Name: </b>";
-                    echo "</td>";
-                    echo "<td>";
-                        echo "$arr[2]";
+                        $str = $arr[4];
+                        $pattern = '/;/i';
+                        echo preg_replace($pattern, '<br>', $str);
                     echo "</td>";
                     echo "</tr>";
 
-                    echo "<td>";
-                        echo "<b>Date of Birth: </b>";
-                    echo "</td>";
-                    echo "<td>";
-                        echo "$arr[3]";
-                    echo "</td>";
+                    echo "<tr>";
+                    echo "<td><b>Total Price:</b></td><td>".$arr[5]+$arr[6]+$arr[7]."</td>";
+                    echo "</tr><tr>";   
+                    echo "<td><b>Address:</b></td><td>".$arr[8]."</td>";
                     echo "</tr>";
 
-                    echo "<td>";
-                        echo "<b>Phone Number: </b>";
-                    echo "</td>";
-                    echo "<td>";
-                        echo "$arr[4]";
-                    echo "</td>";
+                    echo "<tr>";
+                    echo "<td><b>Total Price:</b></td><td>&#8377;".$arr[5]+$arr[6]+$arr[7]."</td>";
                     echo "</tr>";
 
-                    echo "<td>";
-                        echo "<b>Email: </b>";
-                    echo "</td>";
-                    echo "<td>";
-                        echo "$arr[5]";
-                    echo "</td>";
+                    echo "<tr>";
+                    echo "<td><b>Date:</b></td><td>".$arr[11]."</td>";
                     echo "</tr>";
 
+                    echo "<tr>";
+                    echo "<td><b>Uploaded Prescription:</b></td><td><a href='prescriptions/$arr[9]'>Click here to view</a></td>";
+                    echo "</tr>";
+
+                echo "</table>";
+                
             }
-            echo "</table>";
         ?>
     <br><br><br><br><br><br>
     <footer id="footer">

@@ -9,7 +9,7 @@
     $platform=$_POST['platform'];
     $delivery=$_POST['delivery'];
     $address=$_POST['address'];
-    
+    $order_date=date("Y-m-d");
     #file name with a random number so that similar dont get replaced
      $pname = rand(1000,10000)."-".$_FILES["file"]["name"];
  
@@ -22,7 +22,7 @@
     move_uploaded_file($tname, $uploads_dir.'/'.$pname);
  
     #sql query to insert into database
-    $sql = "INSERT INTO `orders`(`order_id`, `username`, `vendor_id`, `d_id`, `order_list`, `price`, `platform_charge`, `delivery`, `address`, `prescription`, `status`) VALUES ('$order_id','$user','$vid','NA','$order_list','$price','$platform','$delivery','$address','$pname','Under Review')";
+    $sql = "INSERT INTO `orders`(`order_id`, `username`, `vendor_id`, `d_id`, `order_list`, `price`, `platform_charge`, `delivery`, `address`, `prescription`, `status`, `order_date`) VALUES ('$order_id','$user','$vid','NA','$order_list','$price','$platform','$delivery','$address','$pname','Under Review','$order_date')";
  
     if(mysqli_query($con,$sql))
     {
