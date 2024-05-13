@@ -43,7 +43,7 @@
         
             require('connection.php');
             $user=$_SESSION['username'];
-            $query="Select * from orders where username like '$user';";
+            $query="Select * from orders where username like '$user' order by order_date DESC;;";
             $user_orders = mysqli_query($con, $query);
 
             if(!$user_orders)

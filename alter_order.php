@@ -33,14 +33,14 @@
         $user=$_SESSION['username'];
 
         $status=$_GET['status'];
-        $oid=$_GET['0id'];
+        $oid=$_GET['oid'];
         $sql="";
         switch($status)
         {
-            case "confirm": $sql="UPDATE orders SET `status`='confirmed' where order_id=$bid";
+            case "confirm": $sql="UPDATE orders SET `status`='confirmed' where order_id=$oid";
                             break;
 
-            case "reject": $sql="UPDATE orders SET `status`='rejected' where order_id=$bid";
+            case "reject": $sql="UPDATE orders SET `status`='rejected' where order_id=$oid";
                             break;
             case "adjust_confirm" : echo "
                                     <script type=\"text/javascript\">
