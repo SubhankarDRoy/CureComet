@@ -22,7 +22,7 @@
     }
     else if ($user_type=="DeliveryPerson")
     {
-        $query="Select DP_ID, Password, Name from deliveryperson where DP_ID like '$user'";
+        $query="Select dp_id, password, Name from delivery_person where dp_id like '$user'";
     }
     else if ($user_type=="Vendor")
     {
@@ -30,7 +30,7 @@
     }
     else if ($user_type=="Counsellor")
     {
-        $query="Select Coun_ID, Password, Name from counsellor where Coun_ID like '$user'";
+        $query="Select c_id, Password, Name from counsellor where c_id like '$user'";
     }
     else
     {
@@ -50,10 +50,11 @@
 	
 	    if($user==$arr[0] && $pass==$arr[1])
     	{
+            
             $_SESSION["username"] = $user;
             $_SESSION["name"] = $arr[2];
             switch($user_type)
-           {
+            {
                 case 'User': header('Location:user_index.php');
                                 break;
 
@@ -66,13 +67,14 @@
                 case 'Admin': header('Location:admin_index.php');
                          break;
 
-                case 'DeliverPerson': header('Location:dp_index.php');
+                case 'DeliveryPerson': header('Location:dp_index.php');
                              break;
 
-                case 'Counsellor': header('Location:coun_index.php');
+                case 'Counsellor': header('Location:c_index.php');
                                  break;
             case 'Lab': header('Location:lab_index.php');
                                  break;
+            default:echo $user_type;
             }
 	    }
         else
