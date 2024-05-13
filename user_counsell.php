@@ -44,7 +44,7 @@
         
             require('connection.php');
             $user=$_SESSION['username'];
-            $query="Select d.name,d.qualification,a.patient_name,a.date,a.time,a.status from appointments a, doctors d where a.username like '$user' and a.doctor_id=d.doctor_id;";
+            $query="Select c.name,c.qualification,co.patient_name,co.comm,co.status, co.date from counsell co, counsellor c where co.username like '$user' and co.c_id=c.c_id order by co.date DESC";
             $user_orders = mysqli_query($con, $query);
 
             if(!$user_orders)
@@ -56,7 +56,7 @@
             {
                 echo "<br>";
                 echo "<table border = '1' ><tr>";
-                    echo "<td><b>Doctor Name:</b> </td>";
+                    echo "<td><b>Counsellor Name:</b> </td>";
                     echo "<td>";
                         echo $arr[0];
                     echo "</td>";
@@ -70,13 +70,9 @@
                     echo "<td><b>Patient Name:</b></td><td>".$arr[2]."</td>";
                     echo "</tr>";  
                     echo "<tr>";
-                    echo "<td><b>Date:</b></td><td>".$arr[3]."</td>";
+                    echo "<td><b>Mode of Communication:</b></td><td>".$arr[3]."</td>";
                     echo "</tr><tr>";   
-                    echo "<td><b>Time:</b></td><td>".$arr[4]."</td>";
-                    echo "</tr>";
-
-                    echo "<tr>";
-                    echo "<td><b>Status:</b></td><td>".$arr[5]."</td>";
+                    echo "<td><b>Status:</b></td><td>".$arr[4]."</td>";
                     echo "</tr>";
 
 
@@ -84,7 +80,7 @@
                 
             }
         ?>
-    <br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br>
     <footer id="footer">
         &copy;<br>
         Academic Project for BCA final semester<br>

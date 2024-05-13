@@ -16,6 +16,7 @@
                 <li><a href="user_index.php">Home</a></li>
                 <li><a href="labs.php">Lab Tests</a></li>
                 <li><a href="appointment.php">Appointments</a></li>
+                <li><a href="counselling.php">Counselling</a></li>
                 <li><a href="cart.php">
                     <?php
                         session_start();

@@ -39,11 +39,23 @@
             echo "<label id='header-label'> <b>Welcome</b> ".$name."</label>";
         ?>
     </header>
-    <div class="about us">
-    <img class="logo_about" src="Images/curecomet_HQ.png" width="200px" height="150px" >
-    <p class="about">CureComet is a pharmaceutical website that allows users to purchase medications from local pharmacies that have enrolled with CureComet. Apart from purchasing medicines, the users can also book doctor’s appointment or lab tests from their home. CureComet will have elements that will improve the user experience and comfort in addition to the ability to purchase medicines. CureComet targets to connect users with local pharmacies and clinics so that the process of medicine delivery is fast and affordable. The doctors with various specialties can enroll themselves and the users can book appointment with the doctors. It also allows user to connect with mental counselors all over the country for easy and secretive counseling sessions.
-        It will also help the user as well as the pharmacies to keep records of purchase and sales respectively. All the information can be viewed in one platform. The clinical records of a user can be monitored for future treatment purposes.</p>
-        
+
+    <div class="c_form">
+    <br><br><br>
+    <center>
+        <form class="form" action="counsell_book.php" method="POST">
+            <input type="hidden" name="c_id" placeholder="Doctor ID" value="<?php echo $_GET['c_id'];?>"><br>
+            <input type="text" name="patient_name" placeholder="Patient Name" required><br>
+            <select name="comm">
+                <option value="Call">Call</option>
+                <option value="Whatsapp">Whatsapp</option>
+                <option value="Email">Email</option>
+            </select><br>
+            <input type="text" name="contact" placeholder="Contact" required><br>
+            <input type="submit" name="book" value="Request Appointment"></br><br>
+        </form>
+    </center>    
     </div>
-</body>
-</html>
+
+    </body>
+    </html>

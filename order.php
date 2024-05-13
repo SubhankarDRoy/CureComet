@@ -14,8 +14,9 @@
         <nav>
             <ul class="menu">
                 <li><a href="user_index.php">Home</a></li>
-                <li><a href="L_Test.php">Lab Tests</a></li>
+                <li><a href="labs.php">Lab Tests</a></li>
                 <li><a href="appointment.php">Appointments</a></li>
+                <li><a href="counselling.php">Counselling</a></li>
                 <li><a href="cart.php">
                     <?php
                         session_start();
@@ -29,7 +30,7 @@
                 </a></li>
                 <li><a href="account_detail.php">My Account</a></li>
                 <li><a href="about.php">About</a></li>
-                <li><a href="login.php">Log Out</a></li>
+                <li><a href="logout_process.php">Log Out</a></li>
             </ul>
         </nav>
         

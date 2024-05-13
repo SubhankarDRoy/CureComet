@@ -171,6 +171,14 @@
   border-radius: 4px;
   width: calc(100% - 16px); /* Adjusted width for input fields */
 }
+.form select {
+  background-color: #f2f2f2; /* Matching background color for input boxes and select */
+  padding: 8px;
+  margin-bottom: 8px; /* Gap between fields */
+  border: none;
+  border-radius: 4px;
+  width: calc(100% - 16px); /* Adjusted width for input fields and select */
+}
 
 /* Submit button */
 .form input[type="submit"] {

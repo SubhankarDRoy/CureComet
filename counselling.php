@@ -41,56 +41,36 @@
     </header>
 
     <?php
+        echo "<table>";
+        require('connection.php');
+        $query="Select * from counsellor;";
+        $test_list = mysqli_query($con, $query);
+
+        if(!$test_list)
+        {
+            die("error");
+        }
         
-            require('connection.php');
-            $user=$_SESSION['username'];
-            $query="Select d.name,d.qualification,a.patient_name,a.date,a.time,a.status from appointments a, doctors d where a.username like '$user' and a.doctor_id=d.doctor_id;";
-            $user_orders = mysqli_query($con, $query);
-
-            if(!$user_orders)
-            {
-                die("error");
-            }
-            
-            while ($arr=mysqli_fetch_array($user_orders,MYSQLI_NUM))
-            {
-                echo "<br>";
-                echo "<table border = '1' ><tr>";
-                    echo "<td><b>Doctor Name:</b> </td>";
-                    echo "<td>";
-                        echo $arr[0];
-                    echo "</td>";
-                    echo "</tr>";
-
-                    echo "<tr>";
-                    echo "<td><b>Qualification:</b></td><td>".$arr[1]."</td>";
-                    echo "</tr>"; 
-
-                    echo "<tr>";
-                    echo "<td><b>Patient Name:</b></td><td>".$arr[2]."</td>";
-                    echo "</tr>";  
-                    echo "<tr>";
-                    echo "<td><b>Date:</b></td><td>".$arr[3]."</td>";
-                    echo "</tr><tr>";   
-                    echo "<td><b>Time:</b></td><td>".$arr[4]."</td>";
-                    echo "</tr>";
-
-                    echo "<tr>";
-                    echo "<td><b>Status:</b></td><td>".$arr[5]."</td>";
-                    echo "</tr>";
-
-
-                echo "</table>";
+        while ($arr=mysqli_fetch_array($test_list,MYSQLI_NUM))
+        {
+            echo "<br>";
+            echo "<table border = '1' ><tr>";
+                echo "<td>";
+                    echo "<h3>".$arr[2]."</h3>";
+                echo "</td>";
                 
-            }
+                echo "</tr>";
+
+                echo "<tr>";
+                    echo "<td><b>Qualification:</b>".$arr[5]."</td>";
+                echo "</tr><tr>";  
+                    echo "<td>";
+                    echo "<button onclick=\"document.location='c_form.php?c_id=$arr[0]'\">Request Appointment</button";
+                    echo "</td>";
+                echo "</tr>";
+            echo "</table>";
+        }
         ?>
-    <br><br><br><br><br><br>
-    <footer id="footer">
-        &copy;<br>
-        Academic Project for BCA final semester<br>
-        developed by Subhankar Deb Roy (2021-24)<br>
-        Department of Computer Application, St. Edmund's College
-    </footer>
 
     </body>
-</html>
+    </html>
