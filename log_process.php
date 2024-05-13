@@ -26,7 +26,7 @@
     }
     else if ($user_type=="Vendor")
     {
-        $query="Select Vendor_ID, Password, Name from vendor where Admin_ID like '$user'";
+        $query="Select Vendor_ID, Password, Name from vendor where Vendor_ID like '$user'";
     }
     else if ($user_type=="Counsellor")
     {
