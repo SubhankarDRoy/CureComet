@@ -44,7 +44,7 @@
         
             require('connection.php');
             $user=$_SESSION['username'];
-            $query="Select d.name,d.qualification,a.patient_name,a.date,a.time,a.status from appointments a, doctors d where a.username like '$user' and a.doctor_id=d.doctor_id;";
+            $query="Select a.appointment_id,d.name,d.qualification,a.patient_name,a.date,a.time,a.status from appointments a, doctors d where a.username like '$user' and a.doctor_id=d.doctor_id;";
             $user_orders = mysqli_query($con, $query);
 
             if(!$user_orders)
@@ -56,27 +56,30 @@
             {
                 echo "<br>";
                 echo "<table border = '1' ><tr>";
+
+                    echo "<td><b>Appointment ID:</b></td><td>".$arr[0]."</td>";
+                    echo "</tr><tr>"; 
                     echo "<td><b>Doctor Name:</b> </td>";
                     echo "<td>";
-                        echo $arr[0];
+                        echo $arr[1];
                     echo "</td>";
                     echo "</tr>";
 
                     echo "<tr>";
-                    echo "<td><b>Qualification:</b></td><td>".$arr[1]."</td>";
+                    echo "<td><b>Qualification:</b></td><td>".$arr[2]."</td>";
                     echo "</tr>"; 
 
                     echo "<tr>";
-                    echo "<td><b>Patient Name:</b></td><td>".$arr[2]."</td>";
+                    echo "<td><b>Patient Name:</b></td><td>".$arr[3]."</td>";
                     echo "</tr>";  
                     echo "<tr>";
-                    echo "<td><b>Date:</b></td><td>".$arr[3]."</td>";
+                    echo "<td><b>Date:</b></td><td>".$arr[4]."</td>";
                     echo "</tr><tr>";   
-                    echo "<td><b>Time:</b></td><td>".$arr[4]."</td>";
+                    echo "<td><b>Time:</b></td><td>".$arr[5]."</td>";
                     echo "</tr>";
 
                     echo "<tr>";
-                    echo "<td><b>Status:</b></td><td>".$arr[5]."</td>";
+                    echo "<td><b>Status:</b></td><td>".$arr[6]."</td>";
                     echo "</tr>";
 
 

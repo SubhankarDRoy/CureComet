@@ -56,6 +56,8 @@
             {
                 echo "<br>";
                 echo "<table border = '1' ><tr>";
+                    echo "<td><b>Order ID:</b></td><td>".$arr[0]."</td>";
+                    echo "</tr><tr>";
                     echo "<td><b>Ordered Medicines:</b> </td>";
                     echo "<td>";
                         $str = $arr[4];
@@ -75,12 +77,14 @@
                     echo "</tr>";
 
                     echo "<tr>";
-                    echo "<td><b>Date:</b></td><td>".$arr[11]."</td>";
+                    echo "<td><b>Date:</b></td><td>".$arr[12]."</td>";
                     echo "</tr>";
 
                     echo "<tr>";
-                    echo "<td><b>Status:</b></td><td>".$arr[10]."</td>";
+                    echo "<td><b>Status:</b></td><td>".$arr[11]."</td>";
                     echo "</tr>";
+
+                    
 
                     echo "<tr>";
                     echo "<td><b>Uploaded Prescription:</b></td><td><a href='prescriptions/$arr[9]' target='_blank'>Click here to view</a></td>";

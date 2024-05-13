@@ -44,7 +44,7 @@
         
             require('connection.php');
             $user=$_SESSION['username'];
-            $query="Select c.name,c.qualification,co.patient_name,co.comm,co.status, co.date from counsell co, counsellor c where co.username like '$user' and co.c_id=c.c_id order by co.date DESC";
+            $query="Select co.s_id,c.name,c.qualification,co.patient_name,co.comm,co.status, co.date from counsell co, counsellor c where co.username like '$user' and co.c_id=c.c_id order by co.date DESC";
             $user_orders = mysqli_query($con, $query);
 
             if(!$user_orders)
@@ -56,23 +56,29 @@
             {
                 echo "<br>";
                 echo "<table border = '1' ><tr>";
+                
+                    echo "<td><b>Session ID:</b></td><td>".$arr[0]."</td>";
+                    echo "</tr><tr>"; 
                     echo "<td><b>Counsellor Name:</b> </td>";
                     echo "<td>";
-                        echo $arr[0];
+                        echo $arr[1];
                     echo "</td>";
                     echo "</tr>";
 
                     echo "<tr>";
-                    echo "<td><b>Qualification:</b></td><td>".$arr[1]."</td>";
+                    echo "<td><b>Qualification:</b></td><td>".$arr[2]."</td>";
                     echo "</tr>"; 
 
                     echo "<tr>";
-                    echo "<td><b>Patient Name:</b></td><td>".$arr[2]."</td>";
+                    echo "<td><b>Patient Name:</b></td><td>".$arr[3]."</td>";
                     echo "</tr>";  
                     echo "<tr>";
-                    echo "<td><b>Mode of Communication:</b></td><td>".$arr[3]."</td>";
+                    echo "<td><b>Mode of Communication:</b></td><td>".$arr[4]."</td>";
                     echo "</tr><tr>";   
-                    echo "<td><b>Status:</b></td><td>".$arr[4]."</td>";
+                    echo "<td><b>Status:</b></td><td>".$arr[5]."</td>";
+                    echo "</tr>";
+                    echo "</tr><tr>";   
+                    echo "<td><b>Date:</b></td><td>".$arr[6]."</td>";
                     echo "</tr>";
 
 

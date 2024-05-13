@@ -56,6 +56,9 @@
             {
                 echo "<br>";
                 echo "<table border = '1' ><tr>";
+                    echo "<td><b>Booking ID:</b></td><td>".$arr[0]."</td>";
+                    echo "</tr>";  
+                    echo "<tr>";
                     echo "<td><b>Test Name:</b> </td>";
                     echo "<td>";
                         echo $arr[4];
