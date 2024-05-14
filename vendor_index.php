@@ -82,8 +82,8 @@
 
                     echo "<tr>";
                         echo "<td><button onclick=\"document.location='alter_order.php?status=confirm&oid=$arr[0]'\">Confirm</button</td>";
-                        echo "<td><button onclick=\"document.location='alter_order.php?status=adjust_confirm&0id=$arr[0]'\">Confirm with adjustment</button</td>";
-                        echo "<td><button class=\"red-button\" onclick=\"document.location='alter_order.php?status=reject&0id=$arr[0]'\">Reject</button</td>";
+                        echo "<td><button onclick=\"document.location='alter_order.php?status=adjust_confirm&oid=$arr[0]'\">Confirm with adjustment</button</td>";
+                        echo "<td><button class=\"red-button\" onclick=\"document.location='alter_order.php?status=reject&oid=$arr[0]'\">Reject</button</td>";
                         echo "<td><button class=\"red-button\" onclick=\"document.location='alter_order.php?status=reason_reject&oid=$arr[0]'\">Reject with reason</button</td>";
                     echo "</tr>";
                 echo "</table>";

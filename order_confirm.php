@@ -23,7 +23,7 @@
     move_uploaded_file($tname, $uploads_dir.'/'.$pname);
  
     #sql query to insert into database
-    $sql = "INSERT INTO `orders`(`order_id`, `username`, `vendor_id`, `d_id`, `order_list`, `price`, `platform_charge`, `delivery`, `address`, `prescription`,`contact`, `status`, `order_date`) VALUES ('$order_id','$user','$vid','NA','$order_list','$price','$platform','$delivery','$address','$pname','$contact','Under Review','$order_date')";
+    $sql = "INSERT INTO `orders`(`order_id`, `username`, `vendor_id`, `dp_id`, `order_list`, `price`, `platform_charge`, `delivery`, `address`, `prescription`,`contact`, `status`, `order_date`) VALUES ('$order_id','$user','$vid','NA','$order_list','$price','$platform','$delivery','$address','$pname','$contact','Under Review','$order_date')";
  
     if(mysqli_query($con,$sql))
     {
@@ -36,7 +36,7 @@
     }
     else
     {
-        echo "Error";
+        echo (mysqli_error($con));
     }
 
  

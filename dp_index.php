@@ -44,7 +44,7 @@
             }
 
 
-            $query="Select * from orders where dp_id like '$user';";
+            $query="Select * from orders where dp_id like '$user' and `status` like '%delivery person assigned%';";
             $orders = mysqli_query($con, $query);
 
             if(!$orders)
@@ -88,13 +88,13 @@
                 echo "</table>";
             }
         ?>
-    <br><br><br><br><br><br><br><br><br><br>
-    <footer id="footer">
-        &copy;<br>
-        Academic Project for BCA final semester<br>
-        developed by Subhankar Deb Roy (2021-24)<br>
-        Department of Computer Application, St. Edmund's College
-    </footer>
+        <br><br><br><br><br><br><br><br><br><br>
+        <footer id="footer">
+            &copy;<br>
+            Academic Project for BCA final semester<br>
+            developed by Subhankar Deb Roy (2021-24)<br>
+            Department of Computer Application, St. Edmund's College
+        </footer>
 
     
 </body>

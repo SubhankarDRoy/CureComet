@@ -77,10 +77,22 @@
                     echo "<tr>";
                         echo "<td>Address:</td><td>$arr[8]</td>";
                     echo "</tr>";
+
+                    echo "<tr>";
+                        echo "<td>Status:</td><td>$arr[11]</td>";
+                    echo "</tr>";
                 echo "</table>";
                 
             }
         ?>
+
+        <br><br><br><br><br><br><br><br><br><br>
+    <footer id="footer">
+        &copy;<br>
+        Academic Project for BCA final semester<br>
+        developed by Subhankar Deb Roy (2021-24)<br>
+        Department of Computer Application, St. Edmund's College
+    </footer>
 
     </body>
     </html>
