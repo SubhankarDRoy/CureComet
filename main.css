@@ -222,6 +222,19 @@
   background-color: #0d4d10; /* Darker shade of green on hover */
 }
 
+.paragraph {
+  background-color: rgba(255, 255, 255, 0.5); /* Blurred background color */
+  padding: 20px;
+  border-radius: 8px;
+  backdrop-filter: blur(2px); /* Apply blur effect */
+  position: relative;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 40px); /* Adjusted width */
+  text-align: center;
+}
+
   
   /* Footer Styles */
   #footer {
