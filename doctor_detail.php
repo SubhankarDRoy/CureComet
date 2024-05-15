@@ -22,13 +22,13 @@
         
         <?php
             session_start();
-            $name=$_SESSION['name'];
+            $name=$_SESSION['doc_name'];
             echo "<label id='header-label'> <b>Welcome</b> ".$name."</label>";
         ?>
     </header>
 
     <?php
-        $user=$_SESSION['username'];
+        $user=$_SESSION['doc_id'];
         
             require('connection.php');
             $query="Select * from doctors where doctor_id like '$user';";

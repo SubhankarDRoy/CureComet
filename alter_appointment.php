@@ -30,7 +30,7 @@
 
     <?php
         require('connection.php');
-        $user=$_SESSION['username'];
+        $user=$_SESSION['doc_id'];
 
         $status=$_GET['status'];
         $aid=$_GET['aid'];

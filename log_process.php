@@ -12,10 +12,6 @@
     {
         $query="Select Username, Password, Name from users where Username like '$user'";
     }
-    else if ($user_type=="Admin")
-    {
-        $query="Select Admin_ID, Password, Name from admin where Admin_ID = $user";
-    }
     else if ($user_type=="Doctor")
     {
         $query="Select doctor_id, Password, Name from doctors where doctor_id like '$user'";
@@ -41,8 +37,13 @@
     
     if(!$cred)
     {
-        echo "User Not found";
-        echo "<a href='login.php'>Go back to login page</a>";
+        echo "
+                <script type=\"text/javascript\">
+                    alert('User Not found');
+                   window.location.replace(\"login.php\");
+                </script>
+            ";
+        
     }
     else
     {
@@ -51,36 +52,49 @@
 	    if($user==$arr[0] && $pass==$arr[1])
     	{
             
-            $_SESSION["username"] = $user;
-            $_SESSION["name"] = $arr[2];
+            
             switch($user_type)
             {
-                case 'User': header('Location:user_index.php');
+                case 'User':    $_SESSION["username"] = $user;
+                                $_SESSION["name"] = $arr[2];
+                                header('Location:user_index.php');
                                 break;
 
-                case 'Doctor': header('Location:doctor_index.php');
-                           break;
+                case 'Doctor':  $_SESSION["doc_id"] = $user;
+                                $_SESSION["doc_name"] = $arr[2];
+                                header('Location:doctor_index.php');
+                                break;
 
-                 case 'Vendor': header('Location:vendor_index.php');
+                 case 'Vendor': $_SESSION["vid"] = $user;
+                                $_SESSION["vname"] = $arr[2];
+                                header('Location:vendor_index.php');
+                                break;
+
+                case 'DeliveryPerson':  $_SESSION["dp_id"] = $user;
+                                        $_SESSION["dp_name"] = $arr[2];
+                                        header('Location:dp_index.php');
+                                        break;
+
+                case 'Counsellor':  $_SESSION["c_id"] = $user;
+                                    $_SESSION["c_name"] = $arr[2];
+                                    header('Location:c_index.php');
+                                    break;
+                case 'Lab': $_SESSION["lab_id"] = $user;
+                            $_SESSION["lab_name"] = $arr[2];
+                            header('Location:lab_index.php');
                             break;
-
-                case 'Admin': header('Location:admin_index.php');
-                         break;
-
-                case 'DeliveryPerson': header('Location:dp_index.php');
-                             break;
-
-                case 'Counsellor': header('Location:c_index.php');
-                                 break;
-            case 'Lab': header('Location:lab_index.php');
-                                 break;
-            default:echo $user_type;
+                default:echo $user_type;
             }
 	    }
         else
         {
-            echo "Wrong Username/Password";
-            echo "<a href='login.php'>Go back to login page</a>";
+            echo "
+                <script type=\"text/javascript\">
+                    alert('Wrong Username/Password');
+                   window.location.replace(\"login.php\");
+                </script>
+            ";
+            
         }
     }
 	
