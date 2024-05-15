@@ -27,6 +27,8 @@
             echo "<label id='header-label'> <b>Welcome</b> ".$name."</label>";
         ?>
     </header>
+    <br><br><br>
+    <center><button onclick="document.location='add_med.php'">Add Medicine</button></center>
 
     <?php
         
