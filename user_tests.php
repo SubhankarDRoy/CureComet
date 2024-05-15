@@ -75,7 +75,7 @@
                     echo "</tr>";
 
                     echo "<tr>";
-                    echo "<td><b>Status:</b></td><td>".$arr[7]."</td>";
+                    echo "<td><b>Status:</b></td><td>".$arr[8]."</td>";
                     echo "</tr>";
 
 

@@ -46,6 +46,7 @@
         <form class="form" action="counsell_book.php" method="POST">
             <input type="hidden" name="c_id" placeholder="Doctor ID" value="<?php echo $_GET['c_id'];?>"><br>
             <input type="text" name="patient_name" placeholder="Patient Name" required><br>
+            <label>Mode of Communication</label>
             <select name="comm">
                 <option value="Call">Call</option>
                 <option value="Whatsapp">Whatsapp</option>

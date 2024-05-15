@@ -197,6 +197,15 @@
   width: calc(100% - 16px); /* Adjusted width for input fields and select */
 }
 
+.form label {
+  font-weight: bold; /* Make labels bold for emphasis */
+  font-size: 13px;
+  margin-bottom: 4px; /* Add a small gap between label and input */
+  color: rgb(91, 90, 90);
+  display: block; /* Display labels as block elements for stacking */
+  text-align: left;
+}
+
 /* Submit button */
 .form input[type="submit"] {
   background-color: #369c39; /* Green color for submit button */

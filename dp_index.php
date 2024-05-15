@@ -68,7 +68,7 @@
                     echo "</td></tr>";
 
                     echo "<tr>";
-                        echo "<td>Price:</td><td>$arr[7]</td>";
+                        echo "<td>Amount:</td><td>".$arr[7]+$arr[6]+$arr[5]."</td>";
                     echo "</tr>";
 
                     echo "<tr>";

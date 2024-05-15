@@ -21,7 +21,7 @@
         <form class="form" action="log_process.php" method="POST">
             <img src="Images/login.png" height="80px" width="80px"><br><br>
             <select name="login_type">
-                <option value="Admin">Admin</option>
+                <option disabled>Select User Type</option>
                 <option value="User">User</option>
                 <option value="Doctor">Doctor</option>
                 <option value="Lab">Lab</option>

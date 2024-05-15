@@ -43,7 +43,7 @@
     <?php
             $vid=$_GET['Vendor_ID'];
             require('connection.php');
-            $query="Select * from med_list where Vendor_ID='".$vid."';";
+            $query="Select * from med_list where Vendor_ID='".$vid."' and Available like 'yes';";
             $vendor_list = mysqli_query($con, $query);
 
             if(!$vendor_list)

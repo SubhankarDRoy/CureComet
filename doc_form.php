@@ -52,7 +52,9 @@
         <form class="form" action="appointment_book.php" method="POST">
             <input type="hidden" name="doctor_id" placeholder="Doctor ID" value="<?php echo $did;?>"><br>
             <input type="text" name="patient_name" placeholder="Patient Name" required><br>
+            <label>Appointment Date</label>
             <input type="date" name="appointment_date" placeholder="Appointment Date" required><br>
+            <label>Appointment Time</label>
             <input type="time" name="appointment_time" placeholder="Appointment Time" required><br>
             <input type="submit" name="book" value="Request Appointment"></br><br>
         </form>
