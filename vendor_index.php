@@ -23,7 +23,7 @@
         
         <?php
             session_start();
-            $name=$_SESSION['name'];
+            $name=$_SESSION['vname'];
             echo "<label id='header-label'> <b>Welcome</b> ".$name."</label>";
         ?>
     </header>
@@ -32,7 +32,7 @@
         <?php
         
             require('connection.php');
-            $user=$_SESSION['username'];
+            $user=$_SESSION['vid'];
             $query="Select Count(*) from orders where vendor_id like '$user' and status like '%Under Review%'";
             $appointment_count=mysqli_query($con,$query);
             $arr=mysqli_fetch_array($appointment_count,MYSQLI_NUM);

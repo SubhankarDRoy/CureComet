@@ -2,7 +2,7 @@
     require('connection.php');
     session_start();
 
-    $vid=$_SESSION['username'];
+    $vid=$_SESSION['vid'];
     $med_name=$_POST['med_name'];
     $com=$_POST['composition'];
     $company=$_POST['company'];

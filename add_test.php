@@ -23,8 +23,8 @@
         
         <?php
             session_start();
-            $name=$_SESSION['name'];
-            $user=$_SESSION['username'];
+            $name=$_SESSION['lab_name'];
+            $user=$_SESSION['lab_id'];
             echo "<label id='header-label'> <b>Welcome</b> ".$name."</label>";
         ?>
     </header>

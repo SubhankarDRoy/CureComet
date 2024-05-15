@@ -2,7 +2,7 @@
     require('connection.php');
     session_start();
 
-    $lid=$_SESSION['username'];
+    $lid=$_SESSION['lab_id'];
     $test_name=$_POST['test_name'];
     $type=$_POST['test_type'];
     $requirement=$_POST['requirement'];

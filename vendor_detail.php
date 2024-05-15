@@ -23,13 +23,13 @@
         
         <?php
             session_start();
-            $name=$_SESSION['name'];
+            $name=$_SESSION['vname'];
             echo "<label id='header-label'> <b>Welcome</b> ".$name."</label>";
         ?>
     </header>
 
     <?php
-        $user=$_SESSION['username'];
+        $user=$_SESSION['vid'];
         
             require('connection.php');
             $query="Select * from vendor where Vendor_ID like '$user';";

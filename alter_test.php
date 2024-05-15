@@ -1,7 +1,7 @@
 <?php
     session_start();
     require('connection.php');
-    $user=$_SESSION['username'];
+    $user=$_SESSION['lab_id'];
     $testname=$_GET['testname'];
     $action=$_GET['action'];
 

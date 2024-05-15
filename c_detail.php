@@ -22,13 +22,13 @@
         
         <?php
             session_start();
-            $name=$_SESSION['name'];
+            $name=$_SESSION['c_name'];
             echo "<label id='header-label'> <b>Welcome</b> ".$name."</label>";
         ?>
     </header>
 
     <?php
-        $user=$_SESSION['username'];
+        $user=$_SESSION['c_id'];
         
             require('connection.php');
             $query="Select * from counsellor where c_id like '$user';";

@@ -23,13 +23,13 @@
         
         <?php
             session_start();
-            $name=$_SESSION['name'];
+            $name=$_SESSION['lab_name'];
             echo "<label id='header-label'> <b>Welcome</b> ".$name."</label>";
         ?>
     </header>
 
     <?php
-        $user=$_SESSION['username'];
+        $user=$_SESSION['lab_id'];
         
             require('connection.php');
             $query="Select * from labs where lab_id like '$user';";

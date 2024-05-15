@@ -23,13 +23,13 @@
         
         <?php
             session_start();
-            $name=$_SESSION['name'];
+            $name=$_SESSION['dp_name'];
             echo "<label id='header-label'> <b>Welcome</b> ".$name."</label>";
         ?>
     </header>
 
     <?php
-        $user=$_SESSION['username'];
+        $user=$_SESSION['dp_id'];
         
             require('connection.php');
             $query="Select * from delivery_person where dp_id like '$user';";

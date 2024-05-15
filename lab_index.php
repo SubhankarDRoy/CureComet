@@ -23,7 +23,7 @@
         
         <?php
             session_start();
-            $name=$_SESSION['name'];
+            $name=$_SESSION['lab_name'];
             echo "<label id='header-label'> <b>Welcome</b> ".$name."</label>";
         ?>
     </header>
@@ -32,7 +32,7 @@
         <?php
         
             require('connection.php');
-            $user=$_SESSION['username'];
+            $user=$_SESSION['lab_id'];
             $query="Select Count(*) from test_booking where lab_id like '$user' and status like '%Under Review%'";
             $appointment_count=mysqli_query($con,$query);
             $arr=mysqli_fetch_array($appointment_count,MYSQLI_NUM);
@@ -82,7 +82,7 @@
 
                     echo "<tr>";
                         echo "<td><button onclick=\"document.location='alter_booking.php?status=confirm&bid=$arr[0]'\">Confirm</button</td>";
-                        echo "<td><button onclick=\"document.location='alter_booking.php?status=adjust_confirm&bid=$arr[0]'\">Confirm with adjustment</button</td>";
+                        echo "<td><button onclick=\"document.location='alter_booking.php?status=adjust_confirm&bid=$arr[0]'\">Confirm with date/time adjustment</button</td>";
                         echo "<td><button class=\"red-button\" onclick=\"document.location='alter_booking.php?status=reject&aid=$arr[0]'\">Reject</button</td>";
                         echo "<td><button class=\"red-button\" onclick=\"document.location='alter_booking.php?status=reason_reject&bid=$arr[0]'\">Reject with reason</button</td>";
                     echo "</tr>";

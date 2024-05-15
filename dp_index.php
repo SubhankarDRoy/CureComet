@@ -23,7 +23,7 @@
         
         <?php
             session_start();
-            $name=$_SESSION['name'];
+            $name=$_SESSION['dp_name'];
             echo "<label id='header-label'> <b>Welcome</b> ".$name."</label>";
         ?>
     </header>
@@ -32,7 +32,7 @@
         <?php
         
             require('connection.php');
-            $user=$_SESSION['username'];
+            $user=$_SESSION['dp_id'];
             $query="Select Count(*) from orders where dp_id like '$user'";
             $appointment_count=mysqli_query($con,$query);
             $arr=mysqli_fetch_array($appointment_count,MYSQLI_NUM);

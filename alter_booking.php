@@ -22,7 +22,7 @@
         
         <?php
             session_start();
-            $name=$_SESSION['name'];
+            $name=$_SESSION['lab_name'];
             echo "<label id='header-label'> <b>Welcome</b> ".$name."</label>";
         ?>
     </header>
@@ -30,7 +30,7 @@
 
     <?php
         require('connection.php');
-        $user=$_SESSION['username'];
+        $user=$_SESSION['lab_id'];
 
         $status=$_GET['status'];
         $bid=$_GET['bid'];

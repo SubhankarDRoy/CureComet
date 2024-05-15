@@ -1,7 +1,7 @@
 <?php
     session_start();
     require('connection.php');
-    $user=$_SESSION['username'];
+    $user=$_SESSION['vid'];
     $medname=$_GET['medname'];
     $action=$_GET['action'];
 

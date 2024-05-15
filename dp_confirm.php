@@ -1,7 +1,7 @@
 <?php
     require('connection.php');
     session_start();
-    $user=$_SESSION['username'];
+    $user=$_SESSION['dp_id'];
     $oid=$_GET['oid'];
     $status=$_GET['status'];
 

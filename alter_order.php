@@ -22,7 +22,7 @@
         
         <?php
             session_start();
-            $name=$_SESSION['name'];
+            $name=$_SESSION['vname'];
             echo "<label id='header-label'> <b>Welcome</b> ".$name."</label>";
         ?>
     </header>
@@ -30,7 +30,7 @@
 
     <?php
         require('connection.php');
-        $user=$_SESSION['username'];
+        $user=$_SESSION['vid'];
 
         $status=$_GET['status'];
         $oid=$_GET['oid'];
@@ -44,7 +44,7 @@
                             break;
             case "adjust_confirm" : echo "
                                     <script type=\"text/javascript\">
-                                        let new_status=prompt(\"Please enter the new status\");
+                                        let new_status=prompt(\"Please enter the adjustment\");
                                         window.location.href = \"status_order.php?status=confirmed-\"+new_status+\"&oid=\"+$oid+\"\";
                                     </script>
                                     ";
@@ -52,7 +52,7 @@
 
             case "reason_reject" : echo "
                                     <script type=\"text/javascript\">
-                                        let new_status=prompt(\"Please enter the new status\");
+                                        let new_status=prompt(\"Please enter the rejection reason\");
                                         window.location.href = \"status_order.php?status=rejected-\"+new_status+\"&oid=\"+$oid+\"\";
                                     </script>
                                     ";
