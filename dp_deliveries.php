@@ -44,7 +44,7 @@
             }
 
 
-            $query="Select * from orders where status like '%confirmed%';";
+            $query="Select * from orders where status like '%confirmed%' order by order_id DESC;";
             $orders = mysqli_query($con, $query);
 
             if(!$orders)

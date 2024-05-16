@@ -44,7 +44,7 @@
         
             require('connection.php');
             $user=$_SESSION['username'];
-            $query="Select * from test_booking where username like '$user';";
+            $query="Select * from test_booking where username like '$user' order by booking_id DESC;";
             $user_orders = mysqli_query($con, $query);
 
             if(!$user_orders)

@@ -128,7 +128,7 @@
                             echo "Total payable amount:";
                         echo "</td>";
                         echo "<td>";
-                            echo "<b>&#8377;".($total+$platform)."</b>";
+                            echo "<b>&#8377;".($total+$platform+100)."</b>";
                         echo "</td>";
                 echo "</tr>";
                 echo "</table>";

@@ -44,7 +44,7 @@
             }
 
 
-            $query="Select * from orders where dp_id like '$user' and `status` like '%delivery person assigned%';";
+            $query="Select * from orders where dp_id like '$user' and `status` like '%delivery person assigned%' order by order_id DESC;";
             $orders = mysqli_query($con, $query);
 
             if(!$orders)

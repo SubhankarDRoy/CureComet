@@ -44,7 +44,7 @@
             }
 
 
-            $query="Select * from test_booking where lab_id like '$user';";
+            $query="Select * from test_booking where lab_id like '$user' order by booking_id DESC;";
             $vendor_list = mysqli_query($con, $query);
 
             if(!$vendor_list)

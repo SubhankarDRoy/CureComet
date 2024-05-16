@@ -58,7 +58,7 @@
                 echo "<br>";
                 echo "<table border = '1' >";
                     echo "<tr>";
-                        echo "<td>Test Name:</td><td>$arr[1]</td>";
+                        echo "<td>Medicine Name:</td><td>$arr[1]</td>";
                     echo "</tr>";
 
                     echo "<tr>";

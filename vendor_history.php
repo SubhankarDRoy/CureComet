@@ -43,7 +43,7 @@
         }
 
 
-        $query="Select * from orders where vendor_id like '$user' order by order_date DESC;";
+        $query="Select * from orders where vendor_id like '$user' order by order_id DESC;";
         $vendor_list = mysqli_query($con, $query);
 
         if(!$vendor_list)

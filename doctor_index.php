@@ -43,7 +43,7 @@
             }
 
 
-            $query="Select * from appointments where doctor_id like '$user' and status like 'Under Review';";
+            $query="Select * from appointments where doctor_id like '$user' and status like 'Under Review' order by appointment_id DESC;";
             $vendor_list = mysqli_query($con, $query);
 
             if(!$vendor_list)

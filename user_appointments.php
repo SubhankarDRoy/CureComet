@@ -44,7 +44,7 @@
         
             require('connection.php');
             $user=$_SESSION['username'];
-            $query="Select a.appointment_id,d.name,d.qualification,a.patient_name,a.date,a.time,a.status from appointments a, doctors d where a.username like '$user' and a.doctor_id=d.doctor_id;";
+            $query="Select a.appointment_id,d.name,d.qualification,a.patient_name,a.date,a.time,a.status from appointments a, doctors d where a.username like '$user' and a.doctor_id=d.doctor_id order by a.appointment_id DESC;";
             $user_orders = mysqli_query($con, $query);
 
             if(!$user_orders)
